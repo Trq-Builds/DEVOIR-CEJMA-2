@@ -212,7 +212,7 @@ L'attaque constitue une série d'infractions pénales caractérisées.
 
 L'audit des locaux révèle de graves manquements aux obligations légales de sécurité physique, compromettant l'intégrité et la disponibilité des données hébergées.
 
-#### `📋`・Tableau des non-conformités physiques
+#### `📋`・Tableau des non-conformités physiques : 
 
 | Élément de sécurité | Constat sur site (Doc 1) | Obligation violée | Risque induit |
 | :--- | :--- | :--- | :--- |
