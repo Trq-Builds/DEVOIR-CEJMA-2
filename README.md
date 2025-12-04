@@ -71,7 +71,7 @@ L'analyse de la procédure d'archivage actuelle met en évidence une absence tot
 | **Processus** | Transfert manuel via clé USB non sécurisée. | Risque de perte ou vol du support amovible. |
 | **Architecture** | Réseau plat (pas de segmentation). | Mouvement latéral possible entre les environnements clients. |
 
-#### `⚖️` Références juridiques et normatives
+#### `⚖️`・Références juridiques et normatives
 
 *   **[RGPD — Article 32](https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4#Article32)** : Impose de mettre en œuvre des mesures techniques (telles que le chiffrement ou la pseudonymisation) pour garantir un niveau de sécurité adapté au risque.
 *   **[ISO/IEC 27001 — Annexe A.9](https://www.iso.org/standard/27001)** : Exige une gestion formelle des accès utilisateurs et l'application du principe de moindre privilège (ici violé par l'usage d'un compte unique).
