@@ -1,13 +1,3 @@
-C'est compris. On efface tout et on recommence de **A à Z**.
-
-Je me base exactement sur la structure du RAW que tu m'as fourni (titres avec `・`, émojis spécifiques, ancres HTML `<a name>`), mais j'ajoute les **liens hypertextes réels** (Légifrance, CNIL, etc.) pour l'aspect "Pro" que tu as demandé.
-
-Voici la **Partie 1 : En-tête, Sommaire et Cours 7**.
-
-Dis-moi si le style est validé pour la suite.
-
-***
-
 # 💼 ・Devoir - 2 BTS SIO ・ SISR 2ᵉ année.
 
 **(DCP ・ Identité numérique ・ Preuve électronique ・ Sécurité équipements ・ Obligations légales)**
