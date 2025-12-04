@@ -275,9 +275,9 @@ La mise en place d'un mot de passe robuste pour l'administrateur, bien que néce
 <a name="dossier10"></a>
 ## `📘`・Dossier 10 — Procédures incidents FRAP (Cibeco)
 
-**Source :** `Cours10-CEJMA-ObligationsLégales.pdf`
-**Contexte :** Audit des Fiches de Réponse à Incident (FRAP) de Cibeco.
-**Objectif :** Identifier les non-conformités juridiques et opérationnelles des procédures de secours.
+* **Source :** `Cours10-CEJMA-ObligationsLégales.pdf`
+* **Contexte :** Audit des Fiches de Réponse à Incident (FRAP) de Cibeco.
+* **Objectif :** Identifier les non-conformités juridiques et opérationnelles des procédures de secours.
 
 <a name="d10q1"></a>
 ### 4.1. FRAP n°1 : Confidentialité des accès serveurs (Q1)
