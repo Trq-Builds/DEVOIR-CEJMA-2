@@ -1,4 +1,4 @@
-# `💼`・Devoir - 2 ・ BTS SIO SISR 2ᵉ année 
+# `💼`・Devoir - 2 ・ BTS SIO SISR 2ᵉ année.
 
 **Thématiques :** Protection des données (DCP) • Identité numérique • Preuve électronique • Sécurité des équipements • Obligations légales.
 
