@@ -52,7 +52,7 @@ L'ensemble des travaux repose sur l'analyse des documents suivants fournis en an
 ***
 
 <a name="dossier7"></a>
-## `📘`・Dossier 7 ・ Audit de conformité & Analyse des risques (Cibeco)
+## `📘`・Dossier 7 ・ Audit de conformité & Analyse des risques (Cibeco).
 
 * **Source :** `Cours7-CEJMA-ObligationProtectionDonnées.pdf`
 * **Contexte :** Audit du système d'archivage de l'entreprise Cibeco.
@@ -126,7 +126,7 @@ Pour mettre le système en conformité, les actions suivantes sont recommandées
 ---
 
 <a name="dossier8"></a>
-## `📘`・Dossier 8 ・ Rapport d'incident cyber (Ecotri)
+## `📘`・Dossier 8 ・ Rapport d'incident cyber (Ecotri).
 
 * **Source :** `Cours8-CEJMA-DisponibilitéIntégritéConfidentialité.pdf`
 * **Contexte :** Analyse post-mortem de l'attaque subie par le site web d'Ecotri le 11 novembre 2019.
@@ -201,7 +201,7 @@ L'attaque constitue une série d'infractions pénales caractérisées.
 ---
 
 <a name="dossier9"></a>
-## `📘`・Dossier 9 ・ Archivage & Protection des données (Cibeco)
+## `📘`・Dossier 9 ・ Archivage & Protection des données (Cibeco).
 
 * **Source :** `Cours9-CEJMA-ArchivageProtectionsDonnées.pdf`
 * **Contexte :** Analyse approfondie de la sécurisation physique et logique de l'infrastructure d'hébergement de Cibeco.
@@ -271,7 +271,7 @@ La mise en place d'un mot de passe robuste pour l'administrateur, bien que néce
 ---
 
 <a name="dossier10"></a>
-## `📘`・Dossier 10 ・ Procédures incidents FRAP (Cibeco)
+## `📘`・Dossier 10 ・ Procédures incidents FRAP (Cibeco).
 
 * **Source :** `Cours10-CEJMA-ObligationsLégales.pdf`
 * **Contexte :** Audit des Fiches de Réponse à Incident (FRAP) de Cibeco.
@@ -342,7 +342,7 @@ Pour que les preuves numériques collectées (logs, images disques) soient accep
 ---
 
 <a name="dossier11"></a>
-## `📘`・Dossier 11 ・ Collecte & Conservation des preuves (Forensic)
+## `📘`・Dossier 11 ・ Collecte & Conservation des preuves (Forensic).
 
 * **Source :** `Cours11-CEJMA-PreuvesNumériques.pdf`
 * **Contexte :** Évaluation des capacités de Cibeco à collecter et conserver des preuves numériques recevables en justice.
@@ -410,18 +410,18 @@ L'audit du site de conservation (Doc 6) montre une vulnérabilité physique inac
 ---
 
 <a name="annexes"></a>
-## `📎`・ Annexes ・ Références juridiques & techniques
+## `📎`・ Annexes ・ Références juridiques & techniques.
 
 Cette section regroupe les textes réglementaires et normatifs cités tout au long du dossier.
 
-### `⚖️`・Textes de Loi (France & UE)
+### `⚖️`・Textes de Loi (France & UE) : 
 *   **[Règlement (UE) 2016/679 (RGPD)](https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX%3A32016R0679)** : Règlement Général sur la Protection des Données.
 *   **[Loi n° 2004-575 (LCEN)](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000801164/)** : Loi pour la Confiance dans l'Économie Numérique (Obligations des hébergeurs).
 *   **[Code Pénal - Art. 323-1 à 323-7](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006070719/LEGISCTA000006165323)** : Atteintes aux Systèmes de Traitement Automatisé de Données (STAD).
 *   **[Code Pénal - Art. 226-16 à 226-24](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006070719/LEGISCTA000006165315)** : Atteintes aux droits de la personne résultant des fichiers ou des traitements informatiques.
 *   **[Code de Commerce - Art. L123-22](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006221311)** : Obligations comptables et conservation des documents (10 ans).
 
-### `🛠️`・Normes & Référentiels
+### `🛠️`・Normes & Référentiels : 
 *   **ISO/IEC 27001:2022** : Systèmes de management de la sécurité de l'information (SMSI).
 *   **ISO/IEC 27037:2012** : Directives pour l'identification, la collecte, l'acquisition et la préservation de preuves numériques.
 *   **ISO 22301:2019** : Sécurité et résilience ・ Systèmes de management de la continuité d'activité.
