@@ -194,7 +194,7 @@ L'attaque constitue une série d'infractions pénales caractérisées.
 | Modification du site | Introduction ou modification frauduleuse de données | **[Art. 323-3](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006418319)** | 5 ans, 150 000 € |
 | Vol de la base clients | Extraction de données | **[Art. 323-3](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006418319)** | 5 ans, 150 000 € |
 
-#### 🔍 Identification de l'attaquant
+#### `🔍`・Identification de l'attaquant
 *   **Élément technique :** L'adresse IP `82.89.34.7` a été relevée dans les logs du serveur web au moment de l'attaque.
 *   **Procédure légale :**
     1.  Dépôt de plainte par Ecotri auprès des services de police ou gendarmerie (C3N/OCLCTIC).
