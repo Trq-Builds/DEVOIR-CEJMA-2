@@ -132,7 +132,7 @@ Voici le **Dossier 8**, rédigé selon les standards de documentation définis.
 ***
 
 <a name="dossier8"></a>
-## `📘` Dossier 8 — Rapport d'incident cyber (Ecotri)
+## `📘`・Dossier 8 — Rapport d'incident cyber (Ecotri)
 
 **Source :** `Cours8-CEJMA-DisponibilitéIntégritéConfidentialité.pdf`
 **Contexte :** Analyse post-mortem de l'attaque subie par le site web d'Ecotri le 11 novembre 2019.
