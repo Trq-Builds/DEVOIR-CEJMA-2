@@ -13,11 +13,11 @@ Le projet s’appuie également sur les principaux référentiels normatifs en m
 
 L'ensemble des travaux repose sur l'analyse des documents suivants fournis en annexe :
 
-*   `Cours 7・CEJMA-ObligationProtectionDonnées.pdf`.
-*   `Cours 8・CEJMA-DisponibilitéIntégritéConfidentialité.pdf`.
-*   `Cours 9・CEJMA-ArchivageProtectionsDonnées.pdf`.
-*   `Cours 10・CEJMA-ObligationsLégales.pdf`.
-*   `Cours 11・CEJMA-PreuvesNumériques.pdf`.
+*   `📂`・`Cours 7・CEJMA-ObligationProtectionDonnées.pdf`.
+*   `📂`・`Cours 8・CEJMA-DisponibilitéIntégritéConfidentialité.pdf`.
+*   `📂`・`Cours 9・CEJMA-ArchivageProtectionsDonnées.pdf`.
+*   `📂`・`Cours 10・CEJMA-ObligationsLégales.pdf`.
+*   `📂`・`Cours 11・CEJMA-PreuvesNumériques.pdf`.
 
 ---
 
