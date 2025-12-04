@@ -130,7 +130,7 @@ Pour mettre le système en conformité, les actions suivantes sont recommandées
 <a name="dossier8"></a>
 ## `📘`・Dossier 8 — Rapport d'incident cyber (Ecotri)
 
-**Source :** `Cours8-CEJMA-DisponibilitéIntégritéConfidentialité.pdf`
+* **Source :** `Cours8-CEJMA-DisponibilitéIntégritéConfidentialité.pdf`
 * **Contexte :** Analyse post-mortem de l'attaque subie par le site web d'Ecotri le 11 novembre 2019.
 * **Typologie :** Défiguration (Defacement) et Injection SQL.
 
@@ -205,7 +205,7 @@ L'attaque constitue une série d'infractions pénales caractérisées.
 <a name="dossier9"></a>
 ## `📘`・Dossier 9 — Archivage & Protection des données (Cibeco)
 
-**Source :** `Cours9-CEJMA-ArchivageProtectionsDonnées.pdf`
+* **Source :** `Cours9-CEJMA-ArchivageProtectionsDonnées.pdf`
 * **Contexte :** Analyse approfondie de la sécurisation physique et logique de l'infrastructure d'hébergement de Cibeco.
 * **Objet :** Mise en conformité des locaux et des serveurs critiques.
 
