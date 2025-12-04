@@ -56,9 +56,9 @@ L'ensemble des travaux repose sur l'analyse des documents suivants fournis en an
 <a name="dossier7"></a>
 ## `📘`・Dossier 7 — Audit de conformité & Analyse des risques (Cibeco)
 
-**Source :** `Cours7-CEJMA-ObligationProtectionDonnées.pdf`
-**Contexte :** Audit du système d'archivage de l'entreprise Cibeco.
-**Statut global :** 🔴 **Non-conforme** (Risque Critique).
+* **Source :** `Cours7-CEJMA-ObligationProtectionDonnées.pdf`
+* **Contexte :** Audit du système d'archivage de l'entreprise Cibeco.
+* **Statut global :** 🔴 **Non-conforme** (Risque Critique).
 
 <a name="d7q1"></a>
 ### 1.1. Analyse de la confidentialité (Q1)
@@ -131,8 +131,8 @@ Pour mettre le système en conformité, les actions suivantes sont recommandées
 ## `📘`・Dossier 8 — Rapport d'incident cyber (Ecotri)
 
 **Source :** `Cours8-CEJMA-DisponibilitéIntégritéConfidentialité.pdf`
-**Contexte :** Analyse post-mortem de l'attaque subie par le site web d'Ecotri le 11 novembre 2019.
-**Typologie :** Défiguration (Defacement) et Injection SQL.
+* **Contexte :** Analyse post-mortem de l'attaque subie par le site web d'Ecotri le 11 novembre 2019.
+* **Typologie :** Défiguration (Defacement) et Injection SQL.
 
 <a name="d8q1"></a>
 ### 2.1. Conséquences techniques sur le triptyque DIC (Q1)
