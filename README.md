@@ -1,4 +1,4 @@
-# 💼 Devoir 2 — BTS SIO SISR 2ᵉ année
+# `💼`・Devoir 2 — BTS SIO SISR 2ᵉ année
 
 **Thématiques :** Protection des données (DCP) • Identité numérique • Preuve électronique • Sécurité des équipements • Obligations légales.
 
@@ -6,7 +6,7 @@ Ce document regroupe l'intégralité des exercices demandés, traités sous form
 
 ---
 
-## 📂 Documents de référence
+## `📂`・Documents de référence
 
 L'ensemble des travaux repose sur l'analyse des documents suivants fournis en annexe :
 
@@ -18,7 +18,7 @@ L'ensemble des travaux repose sur l'analyse des documents suivants fournis en an
 
 ---
 
-## 📌 Table des matières
+## `📌`・Table des matières
 
 1.  [**Dossier 7** — Audit de conformité & Analyse des risques (Cibeco)](#dossier7)
     *   [1.1. Analyse de la confidentialité (Q1)](#d7q1)
@@ -33,7 +33,7 @@ L'ensemble des travaux repose sur l'analyse des documents suivants fournis en an
 ---
 
 <a name="dossier7"></a>
-## 📘 Dossier 7 — Audit de conformité & Analyse des risques (Cibeco)
+## `📘`・Dossier 7 — Audit de conformité & Analyse des risques (Cibeco)
 
 **Source :** `Cours7-CEJMA-ObligationProtectionDonnées.pdf`
 **Contexte :** Audit du système d'archivage de l'entreprise Cibeco.
@@ -44,7 +44,7 @@ L'ensemble des travaux repose sur l'analyse des documents suivants fournis en an
 
 L'analyse de la procédure d'archivage actuelle met en évidence une absence totale de garantie de confidentialité. Les données sont exposées à plusieurs niveaux de l'architecture.
 
-#### 🧠 Diagnostic technique
+#### `🧠`・Diagnostic technique
 
 | Vecteur de risque | Description de la faille | Conséquence technique |
 | :--- | :--- | :--- |
@@ -53,7 +53,7 @@ L'analyse de la procédure d'archivage actuelle met en évidence une absence tot
 | **Processus** | Transfert manuel via clé USB non sécurisée. | Risque de perte ou vol du support amovible. |
 | **Architecture** | Réseau plat (pas de segmentation). | Mouvement latéral possible entre les environnements clients. |
 
-#### ⚖️ Références juridiques et normatives
+#### `⚖️` Références juridiques et normatives
 
 *   **[RGPD — Article 32](https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4#Article32)** : Impose de mettre en œuvre des mesures techniques (telles que le chiffrement ou la pseudonymisation) pour garantir un niveau de sécurité adapté au risque.
 *   **[ISO/IEC 27001 — Annexe A.9](https://www.iso.org/standard/27001)** : Exige une gestion formelle des accès utilisateurs et l'application du principe de moindre privilège (ici violé par l'usage d'un compte unique).
@@ -65,13 +65,13 @@ L'analyse de la procédure d'archivage actuelle met en évidence une absence tot
 
 Le système d'archivage actuel présente un **Point Unique de Défaillance (SPOF)**. Aucune mesure de redondance n'est en place.
 
-#### ⚠️ Facteurs de risques d'indisponibilité
+#### ⚠️・Facteurs de risques d'indisponibilité
 
 1.  **Défaillance matérielle :** Panne du disque dur unique ou corruption de la clé USB de transfert.
 2.  **Dépendance humaine :** Le processus repose intégralement sur une personne (M. Darmon). Une absence entraîne un arrêt du service.
 3.  **Sinistre physique :** La salle serveur unique n'offre aucune protection contre les risques environnementaux (incendie, dégât des eaux).
 
-#### ⚖️ Références juridiques
+#### ⚖️・Références juridiques
 
 *   **[Loi LCEN (2004-575)](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000801164/)** : Obligation pour les hébergeurs de conserver les données de connexion (logs) pendant 1 an. Une indisponibilité des archives constitue une infraction pénale.
 *   **[ISO 22301](https://www.iso.org/standard/75106.html)** : Norme relative à la continuité d'activité, non respectée ici (absence de PCA/PRA).
