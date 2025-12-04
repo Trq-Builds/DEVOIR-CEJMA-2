@@ -123,6 +123,4 @@ Pour mettre le système en conformité, les actions suivantes sont recommandées
 *   **Court terme :** Automatisation des sauvegardes (suppression de la clé USB) et réplication sur un site secondaire (règle 3-2-1).
 *   **Gouvernance :** Rédaction d'une Politique de Sécurité des Systèmes d'Information (PSSI) et formation du personnel.
 
-***
-
-**En attente de validation pour le Dossier 8.**
+---
