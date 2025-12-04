@@ -1,5 +1,7 @@
-# `💼`・Devoir 2 — BTS SIO SISR 2ᵉ année
-Thématiques : DCP ・ Identité numérique ・ Preuve électronique ・ Sécurité équipements ・ Obligations légales
+# `💼`・Devoir 2 BTS SIO SISR 2ᵉ année.
+
+* Thématiques : DCP ・ Identité numérique ・ Preuve électronique ・ Sécurité équipements ・ Obligations légales
+
 Tous les exercices des 5 documents ont été traités. Les corrections et compléments juridiques ont été ajoutés pour renforcer la qualité du rendu (références RGPD, CNIL, Code pénal, ISO 27001...).
 
 # `📚`・Documents fournis
