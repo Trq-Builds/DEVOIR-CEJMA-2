@@ -343,12 +343,8 @@ Pour que les preuves numériques collectées (logs, images disques) soient accep
 
 ---
 
-Voici le **Dossier 11** ainsi que les **Annexes**, rédigés selon les standards de documentation définis pour clore ce projet.
-
-***
-
 <a name="dossier11"></a>
-## 📘 Dossier 11 — Collecte & Conservation des preuves (Forensic)
+## `📘` Dossier 11 — Collecte & Conservation des preuves (Forensic)
 
 **Source :** `Cours11-CEJMA-PreuvesNumériques.pdf`
 **Contexte :** Évaluation des capacités de Cibeco à collecter et conserver des preuves numériques recevables en justice.
@@ -358,12 +354,12 @@ Voici le **Dossier 11** ainsi que les **Annexes**, rédigés selon les standards
 
 L'analyse de l'infrastructure de journalisation (Syslog) révèle des points forts mais aussi des lacunes critiques pour la conformité forensique.
 
-#### ✅ Points de conformité (Bonnes pratiques)
+#### `✅` Points de conformité (Bonnes pratiques)
 *   **Centralisation :** Utilisation d'un serveur Syslog dédié (Kiwi) évitant le stockage local volatil.
 *   **Redondance :** Existence de deux serveurs de logs.
 *   **Synchronisation :** Utilisation du protocole NTP (Network Time Protocol) garantissant un horodatage cohérent, essentiel pour la corrélation d'événements.
 
-#### ❌ Non-conformités critiques
+#### `❌` Non-conformités critiques
 *   **Absence de Chiffrement :** Les logs transitent et sont stockés en clair.
     *   *Violation :* **[RGPD Art. 32](https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4#Article32)** (Sécurité du traitement).
 *   **Absence de Signature :** Aucune garantie d'intégrité (pas de Hachage/Signature électronique).
@@ -376,7 +372,7 @@ L'analyse de l'infrastructure de journalisation (Syslog) révèle des points for
 
 La liste des événements collectés par le serveur Kiwi (Doc 3) est insuffisante pour mener une investigation complète.
 
-#### 📉 Événements manquants (Gap Analysis)
+#### `📉` Événements manquants (Gap Analysis)
 
 Selon les recommandations de l'**ANSSI** et la norme **ISO 27037**, une journalisation efficace doit inclure :
 
@@ -392,7 +388,7 @@ Selon les recommandations de l'**ANSSI** et la norme **ISO 27037**, une journali
 
 La politique de rotation des sauvegardes est juridiquement dangereuse.
 
-#### 🛑 Analyse de la rotation hebdomadaire
+#### `🛑` Analyse de la rotation hebdomadaire
 Cibeco pratique une rotation des supports (bandes ou disques) sur une période d'une semaine. Cela signifie que les preuves sont écrasées tous les 7 jours.
 
 *   **Problème Juridique :** L'**[Article L123-22 du Code de Commerce](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006221311)** impose une conservation des documents comptables et pièces justificatives (dont les logs de transactions) pendant **10 ans**.
@@ -407,7 +403,7 @@ Cibeco pratique une rotation des supports (bandes ou disques) sur une période d
 
 L'audit du site de conservation (Doc 6) montre une vulnérabilité physique inacceptable pour un hébergeur.
 
-#### 🏗️ Audit de robustesse
+#### `🏗️` Audit de robustesse
 *   **Localisation :** Salle unique (S02), pas de site de repli distant. En cas de sinistre majeur (incendie, inondation), toutes les preuves sont perdues.
 *   **Normes non respectées :**
     *   **ISO 22301 (Continuité) :** Exige une redondance géographique (> 10 km) pour les données critiques.
@@ -420,14 +416,14 @@ L'audit du site de conservation (Doc 6) montre une vulnérabilité physique inac
 
 Cette section regroupe les textes réglementaires et normatifs cités tout au long du dossier.
 
-### ⚖️ Textes de Loi (France & UE)
+### `⚖️` Textes de Loi (France & UE)
 *   **[Règlement (UE) 2016/679 (RGPD)](https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX%3A32016R0679)** : Règlement Général sur la Protection des Données.
 *   **[Loi n° 2004-575 (LCEN)](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000801164/)** : Loi pour la Confiance dans l'Économie Numérique (Obligations des hébergeurs).
 *   **[Code Pénal - Art. 323-1 à 323-7](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006070719/LEGISCTA000006165323)** : Atteintes aux Systèmes de Traitement Automatisé de Données (STAD).
 *   **[Code Pénal - Art. 226-16 à 226-24](https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006070719/LEGISCTA000006165315)** : Atteintes aux droits de la personne résultant des fichiers ou des traitements informatiques.
 *   **[Code de Commerce - Art. L123-22](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006221311)** : Obligations comptables et conservation des documents (10 ans).
 
-### 🛠️ Normes & Référentiels
+### `🛠️` Normes & Référentiels
 *   **ISO/IEC 27001:2022** : Systèmes de management de la sécurité de l'information (SMSI).
 *   **ISO/IEC 27037:2012** : Directives pour l'identification, la collecte, l'acquisition et la préservation de preuves numériques.
 *   **ISO 22301:2019** : Sécurité et résilience — Systèmes de management de la continuité d'activité.
