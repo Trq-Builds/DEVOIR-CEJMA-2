@@ -282,7 +282,7 @@ La mise en place d'un mot de passe robuste pour l'administrateur, bien que néce
 
 La procédure actuelle de gestion des accès de secours (génération de clés SSH) présente des failles critiques de sécurité.
 
-#### `🛑`・Analyse des non-conformités
+#### `🛑`・Analyse des non-conformités : 
 
 | Étape Procédure | Faille identifiée | Risque Juridique / Normatif |
 | :--- | :--- | :--- |
