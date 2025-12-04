@@ -16,21 +16,40 @@ L'ensemble des travaux repose sur l'analyse des documents suivants fournis en an
 *   `Cours10-CEJMA-ObligationsLégales.pdf` (Procédures FRAP)
 *   `Cours11-CEJMA-PreuvesNumériques.pdf` (Forensic)
 
----
+C'est entendu. Voici la **Table des matières complète et détaillée** pour l'ensemble du projet, structurée comme demandé pour servir de navigation globale.
 
-## `📌`・Table des matières
+***
+
+## 📌 Table des matières exhaustive
 
 1.  [**Dossier 7** — Audit de conformité & Analyse des risques (Cibeco)](#dossier7)
-    *   [1.1. Analyse de la confidentialité (Q1)](#d7q1)
-    *   [1.2. Analyse de la disponibilité (Q2)](#d7q2)
+    *   [1.1. Analyse de la confidentialité des archives (Q1)](#d7q1)
+    *   [1.2. Analyse du risque d'indisponibilité (Q2)](#d7q2)
     *   [1.3. Classification des risques malveillants (Q4)](#d7q4)
-    *   [1.4. Plan de remédiation](#d7synthese)
+    *   [1.4. Synthèse et plan de remédiation](#d7synthese)
 2.  [**Dossier 8** — Rapport d'incident cyber (Ecotri)](#dossier8)
+    *   [2.1. Conséquences techniques sur le triptyque DIC (Q1)](#d8q1)
+    *   [2.2. Analyse de contagion & Risque systémique (Q2)](#d8q2)
+    *   [2.3. Impacts humains, réputationnels et financiers (Q3)](#d8q3)
+    *   [2.4. Responsabilité pénale & Identification de l'attaquant (Q4)](#d8q4)
 3.  [**Dossier 9** — Archivage & Protection des données (Cibeco)](#dossier9)
+    *   [3.1. Audit de la sécurisation physique des archives (Q1)](#d9q1)
+    *   [3.2. Conformité de la traçabilité des accès (Q2)](#d9q2)
+    *   [3.3. Violations légales sur le serveur critique miRDB (Q3)](#d9q3)
+    *   [3.4. Analyse systémique : pourquoi le mot de passe ne suffit pas (Q4)](#d9q4)
 4.  [**Dossier 10** — Procédures incidents FRAP (Cibeco)](#dossier10)
-5.  [**Dossier 11** — Collecte & Conservation des preuves](#dossier11)
+    *   [4.1. FRAP n°1 : Confidentialité des accès serveurs (Q1)](#d10q1)
+    *   [4.2. FRAP n°2 : Intégrité du transfert des journaux (Q2)](#d10q2)
+    *   [4.3. FRAP n°3 : Disponibilité & Respect du SLA (Q3)](#d10q3)
+    *   [4.4. Exigences probatoires des autorités judiciaires (Q4)](#d10q4)
+5.  [**Dossier 11** — Collecte & Conservation des preuves (Forensic)](#dossier11)
+    *   [5.1. Conformité des moyens techniques de collecte (Q1)](#d11q1)
+    *   [5.2. Analyse de la complétude des événements (Q2)](#d11q2)
+    *   [5.3. Durabilité et viabilité des supports de stockage (Q3)](#d11q3)
+    *   [5.4. Résilience et sécurité du site de conservation (Q4)](#d11q4)
+6.  [**Annexes** — Références juridiques & techniques](#annexes)
 
----
+***
 
 <a name="dossier7"></a>
 ## `📘`・Dossier 7 — Audit de conformité & Analyse des risques (Cibeco)
