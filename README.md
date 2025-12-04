@@ -412,7 +412,7 @@ L'audit du site de conservation (Doc 6) montre une vulnérabilité physique inac
 ---
 
 <a name="annexes"></a>
-## 📎 Annexes — Références juridiques & techniques
+## 📎 Annexes ・ Références juridiques & techniques
 
 Cette section regroupe les textes réglementaires et normatifs cités tout au long du dossier.
 
@@ -426,7 +426,7 @@ Cette section regroupe les textes réglementaires et normatifs cités tout au lo
 ### `🛠️`・Normes & Référentiels
 *   **ISO/IEC 27001:2022** : Systèmes de management de la sécurité de l'information (SMSI).
 *   **ISO/IEC 27037:2012** : Directives pour l'identification, la collecte, l'acquisition et la préservation de preuves numériques.
-*   **ISO 22301:2019** : Sécurité et résilience — Systèmes de management de la continuité d'activité.
+*   **ISO 22301:2019** : Sécurité et résilience ・ Systèmes de management de la continuité d'activité.
 *   **[ANSSI - Guide d'hygiène informatique](https://www.ssi.gouv.fr/guide/guide-dhygiene-informatique/)** : Bonnes pratiques essentielles pour la sécurité des SI.
 
 ---
