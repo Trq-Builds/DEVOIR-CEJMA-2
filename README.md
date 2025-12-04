@@ -183,7 +183,7 @@ L'attaque engendre des conséquences dépassant le cadre purement technique.
 
 L'attaque constitue une série d'infractions pénales caractérisées.
 
-#### `⚖️`・Qualification juridique des faits
+#### `⚖️`・Qualification juridique des faits : 
 
 | Acte malveillant | Qualification pénale | Article Code Pénal | Peine encourue |
 | :--- | :--- | :--- | :--- |
