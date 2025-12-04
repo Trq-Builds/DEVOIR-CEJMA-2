@@ -200,5 +200,75 @@ L'attaque constitue une série d'infractions pénales caractérisées.
     2.  Le procureur ou le juge d'instruction délivre une réquisition judiciaire.
     3.  Le Fournisseur d'Accès Internet (FAI) détenteur de l'IP est contraint de fournir l'identité de l'abonné associé à cette IP à l'heure de l'attaque (**[Loi LCEN Art. 6](https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042038969/)**).
 
-   ---
+---
+
+<a name="dossier9"></a>
+## `📘`・Dossier 9 — Archivage & Protection des données (Cibeco)
+
+**Source :** `Cours9-CEJMA-ArchivageProtectionsDonnées.pdf`
+**Contexte :** Analyse approfondie de la sécurisation physique et logique de l'infrastructure d'hébergement de Cibeco.
+**Objet :** Mise en conformité des locaux et des serveurs critiques.
+
+<a name="d9q1"></a>
+### 3.1. Audit de la sécurisation physique des archives (Q1)
+
+L'audit des locaux révèle de graves manquements aux obligations légales de sécurité physique, compromettant l'intégrité et la disponibilité des données hébergées.
+
+#### `📋`・Tableau des non-conformités physiques
+
+| Élément de sécurité | Constat sur site (Doc 1) | Obligation violée | Risque induit |
+| :--- | :--- | :--- | :--- |
+| **Protection Incendie** | Absence de détecteurs automatiques et d'extinction gaz. Présence d'extincteurs manuels inadaptés. | **[APSAD R4](https://cnpp.com/Boutique/Editions/Referentiels-APSAD/Incendie/Referentiel-APSAD-R4)** / Code du Travail | Destruction totale des données par le feu avant intervention humaine. |
+| **Climatisation** | Climatisation centralisée standard (type bureau). | **ISO 27001 (A.11.2)** | Surchauffe serveur, arrêt de production, réduction durée de vie matériel. |
+| **Contrôle d'accès** | Digicode unique partagé, pas de vidéosurveillance. | **[RGPD Art. 32](https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4#Article32)** | Accès non tracé, intrusion, vol de matériel (serveur tour non racké). |
+| **Alimentation** | Serveur tour simple alimentation. | **ISO 22301** | Arrêt brutal en cas de coupure électrique (perte de données en cache). |
+
+---
+
+<a name="d9q2"></a>
+### 3.2. Conformité de la traçabilité des accès (Q2)
+
+La procédure actuelle de gestion des accès est obsolète et juridiquement irrecevable.
+
+#### Diagnostic
+*   **Méthode actuelle :** Formulaire papier (Doc 2) rempli manuellement.
+*   **Problème majeur :** Ce système ne garantit ni l'**intégrité** (le papier peut être détruit ou modifié), ni la **non-répudiation** (signature facile à falsifier), ni la **disponibilité** (recherche d'information lente et complexe).
+
+#### Exigence légale
+L'**[Article 32 du RGPD](https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4#Article32)** impose la capacité de rétablir la disponibilité et l'accès aux données. De plus, l'obligation de reddition de comptes (Accountability) nécessite une journalisation informatique inaltérable (logs) pour prouver qui a accédé à quelle donnée et à quel moment.
+
+---
+
+<a name="d9q3"></a>
+### 3.3. Violations légales sur le serveur critique miRDB (Q3)
+
+L'analyse de la configuration du serveur de base de données `miRDB` (Doc 3) met en évidence des violations directes de la loi.
+
+#### 1. Absence de chiffrement (Confidentialité)
+*   **Constat :** L'interface d'administration est accessible en HTTP (non sécurisé) et les données semblent stockées en clair.
+*   **Violation :** Non-respect de l'obligation de sécurité des moyens de traitement (**RGPD Art. 32**). En cas d'interception réseau (Man-in-the-Middle), les données sont compromises.
+
+#### 2. Désactivation des journaux (Traçabilité)
+*   **Constat :** Les logs sont désactivés pour "économiser de l'espace disque".
+*   **Violation :**
+    *   **[Code de Commerce Art. L123-22](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006221311)** : Obligation de conserver les documents comptables et pièces justificatives pendant 10 ans. Sans logs, impossible de prouver l'intégrité des transactions.
+    *   **Droit pénal :** L'absence de logs empêche l'identification des auteurs en cas d'infraction, ce qui peut être qualifié de négligence ou de complicité par fourniture de moyens.
+
+---
+
+<a name="d9q4"></a>
+### 3.4. Analyse systémique : pourquoi le mot de passe ne suffit pas (Q4)
+
+La mise en place d'un mot de passe robuste pour l'administrateur, bien que nécessaire, est **insuffisante** pour garantir la conformité globale.
+
+#### Justification structurée
+
+1.  **Périmètre limité :** Le mot de passe ne protège que l'accès logique (Authentification). Il ne couvre pas :
+    *   La **sécurité physique** (vol du serveur).
+    *   L'**interception réseau** (connexion HTTP non chiffrée).
+    *   La **disponibilité** (panne matérielle, incendie).
+2.  **Facteur Humain :** Un mot de passe unique partagé (comme c'est le cas ici) empêche l'imputabilité des actions. Si une erreur est commise, on ne peut savoir quel administrateur en est responsable.
+3.  **Défense en profondeur :** La sécurité doit être multicouche. Un mot de passe fort ne sert à rien si la base de données est accessible publiquement sans pare-feu ou si les sauvegardes sont inexistantes.
+
+---
 
