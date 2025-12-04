@@ -20,7 +20,7 @@ C'est entendu. Voici la **Table des matières complète et détaillée** pour l'
 
 ***
 
-## 📌 Table des matières exhaustive
+## `📌`・Table des matières exhaustive
 
 1.  [**Dossier 7** — Audit de conformité & Analyse des risques (Cibeco)](#dossier7)
     *   [1.1. Analyse de la confidentialité des archives (Q1)](#d7q1)
