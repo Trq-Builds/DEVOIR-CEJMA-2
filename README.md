@@ -35,7 +35,7 @@ Dis-moi si le style est validé pour la suite.
 ---
 
 <a name="cours7"></a>
-## 📋・AUDIT DE CONFORMITÉ & ANALYSE DES RISQUES - SYSTÈME D'ARCHIVAGE CIBECO
+## 📋・AUDIT DE CONFORMITÉ & ANALYSE DES RISQUES - SYSTÈME D'ARCHIVAGE CIBECO.
 
 **Référence :** `Cours7-CEJMA-ObligationProtectionDonnées.pdf`
 **Date d'analyse :** 2025-12-04
