@@ -57,7 +57,7 @@ La procédure d'archivage de Cibeco viole les principes fondamentaux de sécurit
 | **Procédural** | Archivage manuel par clé USB non sécurisée | Pertes, vols, corruption | 6.1 |
 | **Réseau** | Aucune segmentation VLAN/ACL | Lateral movement entre clients | 7.8 |
 
-#### 📖 Sources normatives & juridiques
+#### 📖・Sources normatives & juridiques
 *   **[RGPD Article 32](https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4#Article32)** : "Le responsable du traitement [...] met en œuvre les mesures techniques et organisationnelles appropriées pour garantir un niveau de sécurité adapté au risque."
     *   *→ Absence totale de pseudonymisation, chiffrement et confidentialité par conception.*
 *   **[CNIL - Guide sur la sécurité (2023)](https://www.cnil.fr/fr/la-securite-des-donnees-personnelles)** : "Toute donnée à caractère personnel doit être chiffrée au repos et en transit dès que le risque d'accès non autorisé est identifié."
