@@ -206,8 +206,8 @@ L'attaque constitue une série d'infractions pénales caractérisées.
 ## `📘`・Dossier 9 — Archivage & Protection des données (Cibeco)
 
 **Source :** `Cours9-CEJMA-ArchivageProtectionsDonnées.pdf`
-**Contexte :** Analyse approfondie de la sécurisation physique et logique de l'infrastructure d'hébergement de Cibeco.
-**Objet :** Mise en conformité des locaux et des serveurs critiques.
+* **Contexte :** Analyse approfondie de la sécurisation physique et logique de l'infrastructure d'hébergement de Cibeco.
+* **Objet :** Mise en conformité des locaux et des serveurs critiques.
 
 <a name="d9q1"></a>
 ### 3.1. Audit de la sécurisation physique des archives (Q1)
