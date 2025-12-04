@@ -273,7 +273,7 @@ La mise en place d'un mot de passe robuste pour l'administrateur, bien que néce
 ---
 
 <a name="dossier10"></a>
-## 📘 Dossier 10 — Procédures incidents FRAP (Cibeco)
+## `📘`・Dossier 10 — Procédures incidents FRAP (Cibeco)
 
 **Source :** `Cours10-CEJMA-ObligationsLégales.pdf`
 **Contexte :** Audit des Fiches de Réponse à Incident (FRAP) de Cibeco.
@@ -284,7 +284,7 @@ La mise en place d'un mot de passe robuste pour l'administrateur, bien que néce
 
 La procédure actuelle de gestion des accès de secours (génération de clés SSH) présente des failles critiques de sécurité.
 
-#### 🛑 Analyse des non-conformités
+#### `🛑`・Analyse des non-conformités
 
 | Étape Procédure | Faille identifiée | Risque Juridique / Normatif |
 | :--- | :--- | :--- |
@@ -302,7 +302,7 @@ La procédure actuelle de gestion des accès de secours (génération de clés S
 
 Le transfert des journaux systèmes (logs) vers le serveur d'archivage ne garantit pas leur valeur probante.
 
-#### ⚠️ Problèmes d'intégrité
+#### `⚠️`・Problèmes d'intégrité
 1.  **Absence de scellement :** Les logs sont transférés sans calcul d'empreinte numérique (Hash SHA-256). En cas de modification durant le transfert (Attaque *Man-in-the-Middle*), l'altération est indétectable.
 2.  **Canal non sécurisé :** Le protocole de transfert n'est pas spécifié comme chiffré (SFTP/TLS), exposant les données à une interception.
 
@@ -317,7 +317,7 @@ Selon l'**[Article 1366 du Code Civil](https://www.legifrance.gouv.fr/codes/arti
 
 La procédure de restauration des services clients est incompatible avec les engagements contractuels de Cibeco.
 
-#### 📉 Analyse de l'écart RTO/RPO
+#### `📉`・Analyse de l'écart RTO/RPO
 *   **Engagement (SLA) :** Disponibilité de 99,9% (soit < 9h d'arrêt par an).
 *   **Réalité Procédure :** La sauvegarde est trimestrielle (tous les 3 mois).
 *   **Calcul du risque :**
