@@ -412,7 +412,7 @@ L'audit du site de conservation (Doc 6) montre une vulnérabilité physique inac
 ---
 
 <a name="annexes"></a>
-## 📎 Annexes ・ Références juridiques & techniques
+## `📎`・ Annexes ・ Références juridiques & techniques
 
 Cette section regroupe les textes réglementaires et normatifs cités tout au long du dossier.
 
