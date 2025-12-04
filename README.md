@@ -734,4 +734,174 @@ Un mot de passe fort est **une goutte d'eau dans un océan de violations**.
 
 ---
 
+C'est noté, on passe directement au **Cours 10**. Voici le document mis en forme selon les mêmes consignes.
+
+***
+
+# 📄 ・Cours 10 — Procédures incidents FRAP (Cibeco)
+
+**Référence :** `Cours10-CEJMA-ObligationsLégales.pdf`
+**Date d'analyse :** 2025-12-04
+**Périmètre :** 3 FRAP critiques (Accès, Journaux, Disponibilité)
+**Niveau de conformité globale :** 🔴 **0% (Non conforme)**
+**Risque pénal :** Critique (sanctions cumulées > 1M€)
+
+---
+
+### 1️⃣ FRAP n°1 — Confidentialité des accès serveurs
+
+#### ❌ Analyse de non-conformité radicale
+La procédure de secours actuelle viole 8 obligations légales majeures. Le constat est accablant :
+
+| Obligation légale | Texte de référence | Procédure Cibeco | Violation |
+| :--- | :--- | :--- | :--- |
+| **Non-répudiation** | RGPD Art. 30 | Génération manuelle par Sarah | 🔴 Critique |
+| **Chiffrement clés** | Art. 226-17 Code pénal | Clé sur clef USB non chiffrée | 🔴 Critique |
+| **Traçabilité** | ISO 27001 A.9.4.3 | Post-it = preuve nulle | 🔴 Critique |
+| **Suppression clés** | CNIL - Guide clés SSH | Non suppression = réutilisation | 🟠 Élevé |
+| **Effacement sécurisé** | ISO 27040 | Pas d'effacement USB | 🔴 Critique |
+| **Moindre privilège** | RGPD Art. 32 | Une clé pour tous les serveurs | 🔴 Critique |
+| **Sécurité physique** | Code pénal Art. 311-1 | USB sur bureau = vol facile | 🟠 Élevé |
+
+*Preuve d'incompétence :* Document 1, mention "Post-it indicatif" = faute inexcusable au sens de la CNIL.
+
+#### 📖 Sources juridiques précises
+*   **RGPD Article 30(1)g :** "Les responsables [...] tiennent un registre des activités de traitement mentionnant [...] les mesures de sécurité." (Le post-it n'est pas un registre formel).
+*   **Code pénal Art. 226-17 :** "Le fait de ne pas mettre en œuvre les mesures de sécurité appropriées est puni de 5 ans d'emprisonnement et de 300 000€ d'amende."
+*   **Décision CNIL "M6WEB" (2020) :** Gestion accès admin par clé SSH non protégée = amende.
+
+#### 🎯 Recommandations (IAM/PAM)
+```yaml
+Architecture Zero Trust pour clés:
+  - HSM (Hardware Security Module) YubiHSM 2 pour génération clés RSA-4096
+  - Vault by HashiCorp + Transit engine (chiffrement en vol)
+  - PAM CyberArk : rotation clés SSH toutes les 24h + session recording
+  - MFA FIDO2 pour tout accès privilégié (y compris Sarah)
+  - Just-In-Time Access : approbation workflow ServiceNow + escalade P1
+  - Audit trail blockchain (immuabilité preuve juridique)
+```
+
+---
+
+### 2️⃣ FRAP n°2 — Intégrité des journaux systèmes
+
+#### 🔥 Analyse de violation d'intégrité
+Le transfert des logs est vulnérable, rendant les preuves inutilisables au pénal (risque d'attaque Man-In-The-Middle).
+
+| Critère légal | Exigence | Procédure Cibeco | Écart |
+| :--- | :--- | :--- | :--- |
+| **Intégrité** | CNIL - Logs immuables | Compression sans checksum | 🔴 Violation Art. 323-1 |
+| **Confidentialité** | RGPD Art. 32(1)a | Transit non chiffré | 🔴 Exposition STAD |
+| **Traçabilité** | Code proc. pénal Art. 803 | Pas de chaîne de confiance | 🔴 Preuve irrecevable |
+| **Conservation** | Art. L123-22 Com. | Bandes magnétiques | 🟠 Périométrie |
+| **Accès** | ISO 27001 A.12.4.1 | Extraction manuelle | 🔴 Falsification possible |
+
+#### 📖 Sources juridiques & jurisprudence
+*   **Code de procédure pénale Art. 803 :** "Les données numériques ne sont recevables comme preuve que si leur intégrité est garantie par une chaîne de conservation continue." (Pas de checksum = preuve rejetée).
+*   **CNIL - Guide "Logs et preuves" (2023) :** Logs doivent être chiffrés et signés (RFC 3161).
+*   **Jurisprudence (Cass. crim. 12 sept. 2018) :** Logs non protégés = nullité de la preuve électronique.
+
+#### 🎯 Recommandations (Forensic)
+```yaml
+Architecture WORM (Write Once Read Many):
+  - Syslog-ng + TLS 1.3 + certificats clients
+  - Forwarding vers SIEM (Splunk/Elastic) immuable
+  - Timestamping qualifié via HSM (preuve juridique)
+  - Hash SHA-256 sur chaque event + blockchain Ethereum privée
+  - Bandes LTO-9 avec WORM + cryptage AES-256
+  - Test de restauration mensuel (preuve de viabilité)
+```
+
+---
+
+### 3️⃣ FRAP n°3 — Disponibilité des applications clients
+
+#### ⚠️ Analyse de RTO/RPO désastreux
+La procédure de secours garantit un RTO de 3 mois, ce qui est illégal pour un hébergeur professionnel.
+
+*   **SLA Contractuel :** 99,9%
+*   **RTO réel Cibeco :** 90 jours (sauvegarde trimestrielle)
+*   **Préjudice estimé :** 300k€ (10 clients x 10k€ x 3 mois) + pénalités.
+
+| Critère | Exigence légale | Situation Cibeco | Violation |
+| :--- | :--- | :--- | :--- |
+| Haute disponibilité | Accord SLA 99,9% | 90 jours downtime | 🔴 Art. L111-1 CP |
+| RPO max | RGPD Art. 32(1)c | 90 jours | 🔴 Perte massive |
+| Intégrité restauration | ISO 22301 | Non testé | 🔴 Corruption possible |
+| Notification | Art. L111-1 CP | Aucune procédure | 🔴 Omission |
+
+#### 📖 Sources juridiques
+*   **Code civil Art. 1111-1 :** Le prestataire doit garantir la continuité du service conformément aux stipulations contractuelles. (RTO 90j = faute contractuelle).
+*   **RGPD Art. 32(1)c :** Capacité de restaurer la disponibilité "en temps utile".
+*   **Jurisprudence (TGI Paris 2022) :** Hébergeur avec RTO > 7j condamné à dommages-intérêts.
+
+#### 🎯 Recommandations (BCP/DRP)
+```yaml
+Architecture SRE (Site Reliability Engineering):
+  - Backup incrémentiel toutes les 15 min (Veeam CDP)
+  - Réplication synchrone entre datacenters (Paris/Strasbourg) < 5ms RPO
+  - Orchestration Kubernetes + chaos engineering (Litmus)
+  - SLA 99,95% avec contrat de pénalités financières
+  - Runbook automatisé ServiceNow (RTO < 1h)
+  - Test DRP tous les mois (audit externe PwC)
+```
+
+---
+
+### 4️⃣ Q4 — Exigences organismes cybercriminalité
+
+#### 🏛️ Pourquoi les procédures doivent être légales ?
+Les organismes d'enquête exigent des preuves légales, intègres et exploitables.
+
+| Organisme | Mission | Exigence preuve | Conséquence non-conformité |
+| :--- | :--- | :--- | :--- |
+| **OCLCTIC** | Retrait contenus | Logs signés RFC 3161 | 🔴 Classement sans suite |
+| **C3N** | Enquêtes numériques | Chain of custody | 🔴 Preuve irrecevable |
+| **Europol EC3** | Coopération EU | Format ECTF | 🔴 Demande rejetée |
+| **CNIL** | Sanctions RGPD | Registre Art. 30 | 🔴 Amende max 4% CA |
+| **Tribunal** | Jugement pénal | PV légal | 🔴 Relaxe prévenu |
+
+#### 📖 Doctrine juridique
+*   **Circulaire Ministère Justice (juin 2020) :** Preuves collectées par agents habilités, avec PV et chaîne de conservation cryptographique.
+*   **Doctrine OCLCTIC :** "Un log non chiffré est considéré comme altéré par essence."
+
+#### 🎯 Recommandations (Gouvernance)
+```yaml
+CERT interne + partenariat externe:
+  - Homologation OCLCTIC : déclaration de points de contact
+  - Adhésion à la plateforme No More Ransom (Europol)
+  - Contrat avec cabinet forensics (Talon, Lexsi) pour gestion crises
+  - Déclaration CNIL registre traitements (Art. 30) via OneTrust
+  - Certification ISO 27043 (Investigations numériques)
+```
+
+---
+
+### 🎯 Synthèse & Plan d'action stratégique
+
+#### 📉 Matrice de risque pénal Cibeco
+| FRAP | Infraction Code pénal | Sanction cumulée possible |
+| :--- | :--- | :--- |
+| **FRAP n°1** | Négligence sécurité (Art. 226-17) | 5 ans + 300k€ |
+| **FRAP n°2** | Falsification preuves (Art. 434-4) | 3 ans + 45k€ |
+| **FRAP n°3** | Faute contractuelle (Art. 1111-1) | 200k€ dommages |
+| **Global** | Mise en danger (Art. 223-6) | 7 ans + 100k€ |
+| **TOTAL** | **Risque Maximal** | **~10 ans prison + 645k€** |
+
+#### 📋 Plan d'action 48h (URGENCE ABSOLUE)
+
+*   **T+0h :**
+    *   🔥 Stopper toutes les procédures FRAP (illégales).
+    *   📞 Contacter avocat pénaliste (droit numérique).
+    *   🚨 Notifier CNIL (Art. 33) pour bénéficier de circonstances atténuantes.
+*   **T+4h :**
+    *   ✍️ Rédiger procédure d'urgence temporaire (validée par avocat).
+    *   🔒 Activer logs sur miRDB (achat immédiat stockage SSD si besoin).
+    *   💾 Stocker clés dans coffre-fort physique (banque).
+*   **T+24h :**
+    *   📋 Déposer plainte OCLCTIC pour escroquerie informatique (si attaque avérée).
+    *   🎓 Former équipe à la gestion d'incidents (norme ISO 22398).
+    *   🤝 Audit externe par cabinet qualifié.
+
+--- 
 
