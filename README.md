@@ -16,6 +16,8 @@ L'ensemble des travaux repose sur l'analyse des documents suivants fournis en an
 *   `Cours 10・CEJMA-ObligationsLégales.pdf`.
 *   `Cours 11・CEJMA-PreuvesNumériques.pdf`.
 
+---
+
 
 ## `📌`・Table des matières exhaustive
 
