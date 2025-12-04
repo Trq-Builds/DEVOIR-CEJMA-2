@@ -141,7 +141,7 @@ Voici le **Dossier 8**, rédigé selon les standards de documentation définis.
 
 L'analyse forensique de l'incident met en évidence une compromission totale des trois piliers de la sécurité de l'information (DIC).
 
-#### `📊` Tableau de synthèse des impacts
+#### `📊`・Tableau de synthèse des impacts
 
 | Critère | État | Description de l'incident | Impact métier |
 | :--- | :--- | :--- | :--- |
@@ -149,7 +149,7 @@ L'analyse forensique de l'incident met en évidence une compromission totale des
 | **Intégrité** | 🔴 **Compromise** | Modification de la page d'accueil (`new_msg`) et remplacement d'images (`valider.ok.jpeg`). Injection de code malveillant en base de données. | Perte de confiance, diffusion de fausses informations, corruption des données. |
 | **Confidentialité** | 🟠 **Menacée** | L'injection SQL a potentiellement permis l'exfiltration de la table `membres` (noms, adresses, téléphones). | Violation de données personnelles (DCP) nécessitant une notification CNIL. |
 
-#### `🧠` Analyse technique
+#### `🧠`・Analyse technique
 La vulnérabilité exploitée est une **Injection SQL** (CWE-89). Le code source PHP (lignes 9-10 du document fourni) ne filtre pas les entrées utilisateurs et n'utilise pas de requêtes préparées (`INSERT INTO ... VALUES ...`).
 
 ---
@@ -171,11 +171,11 @@ Le risque ne se limite pas au seul client Ecotri. L'incident révèle une faille
 
 L'attaque engendre des conséquences dépassant le cadre purement technique.
 
-#### `👥` Impacts Humains
+#### `👥`・Impacts Humains
 *   **Clients (ex: Jean Dupont, Audrey Rabanov) :** Frustration, perte de confiance, sentiment d'insécurité quant à leurs données personnelles.
 *   **Personnel (M. Legendre) :** Stress intense, risque psychosociaux (burnout), surcharge de travail pour la gestion de crise.
 
-#### 💶 Impacts Financiers
+#### `💶`・Impacts Financiers
 1.  **Perte de Chiffre d'Affaires :** Résiliation de contrats (churn), comme menacé par le client Hubert Garand ("C'est fini Ecotri").
 2.  **Coûts de remédiation :** Intervention d'experts cyber, reconstruction du site, audit de code.
 3.  **Sanctions juridiques :** Risque d'amende administrative par la CNIL pouvant atteindre **4% du chiffre d'affaires mondial** ou 20 millions d'euros en cas de défaut de sécurité avéré ([Art. 83 RGPD](https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre8#Article83)).
@@ -187,7 +187,7 @@ L'attaque engendre des conséquences dépassant le cadre purement technique.
 
 L'attaque constitue une série d'infractions pénales caractérisées.
 
-#### `⚖️` Qualification juridique des faits
+#### `⚖️`・Qualification juridique des faits
 
 | Acte malveillant | Qualification pénale | Article Code Pénal | Peine encourue |
 | :--- | :--- | :--- | :--- |
