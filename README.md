@@ -75,6 +75,3 @@ Tous les exercices des 5 documents ont été traités. Les corrections et compl�
 
 ---
 
-**Partie 1 terminée !** ✅
-
-Envoie-moi le signal quand tu veux la **Partie 2 : Cours 7 — Audit de conformité Cibeco** 🚀
