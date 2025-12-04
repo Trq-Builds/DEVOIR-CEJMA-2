@@ -127,10 +127,6 @@ Pour mettre le système en conformité, les actions suivantes sont recommandées
 
 ---
 
-Voici le **Dossier 8**, rédigé selon les standards de documentation définis.
-
-***
-
 <a name="dossier8"></a>
 ## `📘`・Dossier 8 — Rapport d'incident cyber (Ecotri)
 
