@@ -112,7 +112,7 @@ Test Disaster Recovery trimestriel (chaos engineering)
 <a name="q4"></a>
 ### 3️⃣・Q4 - Classification de gravité des risques malveillants
 
-#### 🎫 Ticket d'incident structuré CNIL
+#### 🎫・Ticket d'incident structuré CNIL
 *Template CNIL : Déclaration de violation de données ([Article 33](https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4#Article33))*
 
 | Identifiant | **RISQUE-2025-001** | **RISQUE-2025-002** |
