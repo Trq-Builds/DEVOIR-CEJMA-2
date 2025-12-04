@@ -23,7 +23,7 @@ Dis-moi si le style est validé pour la suite.
 *   `Cours10-CEJMA-ObligationsLégales.pdf`
 *   `Cours11-CEJMA-PeuvesNumériques.pdf`
 
-### 📌 ・Table des matières (Cliquez pour être redirigé.)
+### 📌・Table des matières (Cliquez pour être redirigé.)
 
 1.  [Cours 7・Audit de conformité & Analyse des risques (Cibeco)](#cours7)
 2.  [Cours 8・Rapport d'incident cyber (Ecotri)](#cours8)
@@ -35,7 +35,7 @@ Dis-moi si le style est validé pour la suite.
 ---
 
 <a name="cours7"></a>
-## 📋 AUDIT DE CONFORMITÉ & ANALYSE DES RISQUES - SYSTÈME D'ARCHIVAGE CIBECO
+## 📋・AUDIT DE CONFORMITÉ & ANALYSE DES RISQUES - SYSTÈME D'ARCHIVAGE CIBECO
 
 **Référence :** `Cours7-CEJMA-ObligationProtectionDonnées.pdf`
 **Date d'analyse :** 2025-12-04
@@ -44,7 +44,7 @@ Dis-moi si le style est validé pour la suite.
 **Non-conformités ISO 27001 :** 12
 
 <a name="q1"></a>
-### 1️⃣ Q1 - Pourquoi la confidentialité des données archivées n'est-elle pas garantie ?
+### 1️⃣・Q1 - Pourquoi la confidentialité des données archivées n'est-elle pas garantie ?
 
 #### 🔍 Analyse technique détaillée
 La procédure d'archivage de Cibeco viole les principes fondamentaux de sécurité des données ([RGPD Art. 32](https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4#Article32)) et de contrôle d'accès ([ISO 27001 A.9](https://www.iso.org/standard/27001)). Les vecteurs d'attaque sont multiples :
@@ -64,7 +64,7 @@ La procédure d'archivage de Cibeco viole les principes fondamentaux de sécurit
 *   **[ISO/IEC 27001 A.9.2.1](https://www.iso.org/standard/27001)** : "L'enregistrement et la gestion des utilisateurs doivent être formalisés avec principe de moindre privilège."
     *   *→ Accès à 100% des archives par une seule personne = violation du least privilege.*
 
-#### 🎯 Recommandations
+#### 🎯・Recommandations
 ```yaml
 Maturité visée: Niveau 4/5 (Géré & Optimisé)
 
@@ -76,9 +76,9 @@ Audit trail complet : SIEM + blockchain pour immuabilité des logs
 ```
 
 <a name="q2"></a>
-### 2️⃣ Q2 - Argumentation sur le risque d'indisponibilité
+### 2️⃣・Q2 - Argumentation sur le risque d'indisponibilité
 
-#### ⚠️ Analyse de risque quantitative
+#### ⚠️・Analyse de risque quantitative
 *   **RTO actuel :** ∞ (pas de reprise d'activité planifiée)
 *   **RPO actuel :** 24h (perte de 1 journée de données archivables)
 *   **Coût estimé/heure :** 12 000€ (perte de contrats, pénalités, image)
@@ -98,7 +98,7 @@ Audit trail complet : SIEM + blockchain pour immuabilité des logs
 *   **[Loi n°2004-575 (LCEN)](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000801164/)** : "Les données de trafic doivent être conservées 1 an et accessibles rapidement aux autorités."
     *   *→ Indisponibilité = violation légale.*
 
-#### 🎯 Recommandations
+#### 🎯・Recommandations
 ```yaml
 Architecture cible:
 
@@ -110,7 +110,7 @@ Test Disaster Recovery trimestriel (chaos engineering)
 ```
 
 <a name="q4"></a>
-### 3️⃣ Q4 - Classification de gravité des risques malveillants
+### 3️⃣・Q4 - Classification de gravité des risques malveillants
 
 #### 🎫 Ticket d'incident structuré CNIL
 *Template CNIL : Déclaration de violation de données ([Article 33](https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4#Article33))*
@@ -121,7 +121,7 @@ Test Disaster Recovery trimestriel (chaos engineering)
 | **Niveau de gravité** | 🔴 **CRITIQUE** | 🔴 **CRITIQUE** |
 | **Base légale** | RGPD Art. 33(1) | RGPD Art. 33(1) + Art. L123-22 Code commerce |
 
-#### 📚 Justifications détaillées
+#### 📚・Justifications détaillées
 
 **Risque 1 : Accès frauduleux aux données**
 > **Gravité CRITIQUE car :**
@@ -139,7 +139,7 @@ Test Disaster Recovery trimestriel (chaos engineering)
 > *   **Chaîne de confiance :** Pas de timestamping qualifié ([eIDAS](https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=urex:32014R0910)) ni de signature électronique.
 > *   **Score STRIDE :** 8.5/10
 
-#### 🎯 Recommandations
+#### 🎯・Recommandations
 ```yaml
 Mesures correctives immédiates:
 
@@ -151,7 +151,7 @@ Contrat d'assurance cyber avec couverture RGPD
 ```
 
 <a name="synthese"></a>
-### 4️⃣ Synthèse & Feuille de route stratégique
+### 4️⃣・Synthèse & Feuille de route stratégique
 
 #### 📉 Maturité actuelle vs. cible
 
@@ -162,21 +162,21 @@ Contrat d'assurance cyber avec couverture RGPD
 | Continuité de service | 0/5 | 4/5 | 🔴 **CRITIQUE** |
 | Gouvernance des données | 1/5 | 5/5 | 🔴 **CRITIQUE** |
 
-#### 🛡️ Plan d'action 90 jours
+#### 🛡️ ・Plan d'action 90 jours
 
 **Jours 1-30 (URGENT) :**
-*   🔒 Chiffrement immédiat des données existantes (VeraCrypt).
-*   🚨 Revocation totale des accès, mise en place PAM (CyberArk).
-*   📋 Déclaration d'incident auprès CNIL si attaque confirmée.
+*   🔒・Chiffrement immédiat des données existantes (VeraCrypt).
+*   🚨・Revocation totale des accès, mise en place PAM (CyberArk).
+*   📋・ Déclaration d'incident auprès CNIL si attaque confirmée.
 
 **Jours 31-60 (CONSOLIDATION) :**
-*   🏗️ Migration vers architecture 3-2-1-1 avec Veeam/AWS S3 Glacier.
-*   🎓 Formation RGPD + ISO 27001 pour l'équipe.
-*   📝 Rédaction de PSSI (Politique de Sécurité des Systèmes d'Information).
+*   🏗️・Migration vers architecture 3-2-1-1 avec Veeam/AWS S3 Glacier.
+*   🎓・Formation RGPD + ISO 27001 pour l'équipe.
+*   📝・Rédaction de PSSI (Politique de Sécurité des Systèmes d'Information).
 
 **Jours 61-90 (OPTIMISATION) :**
-*   ✅ Audit externe PASSI/certification ISO 27001.
-*   🤖 Déploiement de l'automatisation (Terraform/Ansible).
-*   📊 Tableau de bord de conformité temps réel (Grafana).
+*   ✅・Audit externe PASSI/certification ISO 27001.
+*   🤖・Déploiement de l'automatisation (Terraform/Ansible).
+*   📊・Tableau de bord de conformité temps réel (Grafana).
 
 --- 
