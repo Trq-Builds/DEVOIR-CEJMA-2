@@ -124,3 +124,83 @@ Pour mettre le système en conformité, les actions suivantes sont recommandées
 *   **Gouvernance :** Rédaction d'une Politique de Sécurité des Systèmes d'Information (PSSI) et formation du personnel.
 
 ---
+
+Voici le **Dossier 8**, rédigé selon les standards de documentation définis.
+
+***
+
+<a name="dossier8"></a>
+## 📘 Dossier 8 — Rapport d'incident cyber (Ecotri)
+
+**Source :** `Cours8-CEJMA-DisponibilitéIntégritéConfidentialité.pdf`
+**Contexte :** Analyse post-mortem de l'attaque subie par le site web d'Ecotri le 11 novembre 2019.
+**Typologie :** Défiguration (Defacement) et Injection SQL.
+
+<a name="d8q1"></a>
+### 2.1. Conséquences techniques sur le triptyque DIC (Q1)
+
+L'analyse forensique de l'incident met en évidence une compromission totale des trois piliers de la sécurité de l'information (DIC).
+
+#### 📊 Tableau de synthèse des impacts
+
+| Critère | État | Description de l'incident | Impact métier |
+| :--- | :--- | :--- | :--- |
+| **Disponibilité** | 🔴 **Interrompue** | Le service de valorisation des déchets est inaccessible. Le forum est dégradé (lecture seule ou contenu altéré). | Arrêt de la production, impossibilité pour les clients d'utiliser le service. |
+| **Intégrité** | 🔴 **Compromise** | Modification de la page d'accueil (`new_msg`) et remplacement d'images (`valider.ok.jpeg`). Injection de code malveillant en base de données. | Perte de confiance, diffusion de fausses informations, corruption des données. |
+| **Confidentialité** | 🟠 **Menacée** | L'injection SQL a potentiellement permis l'exfiltration de la table `membres` (noms, adresses, téléphones). | Violation de données personnelles (DCP) nécessitant une notification CNIL. |
+
+#### 🧠 Analyse technique
+La vulnérabilité exploitée est une **Injection SQL** (CWE-89). Le code source PHP (lignes 9-10 du document fourni) ne filtre pas les entrées utilisateurs et n'utilise pas de requêtes préparées (`INSERT INTO ... VALUES ...`).
+
+---
+
+<a name="d8q2"></a>
+### 2.2. Analyse de contagion & Risque systémique (Q2)
+
+Le risque ne se limite pas au seul client Ecotri. L'incident révèle une faille structurelle dans les processus de développement de l'hébergeur Cibeco.
+
+#### Diagnostic de contagion
+*   **Réutilisation de code :** Cibeco semble utiliser le même moteur de site ou les mêmes procédures d'authentification pour l'ensemble de ses clients.
+*   **Vecteur de propagation :** Si la faille réside dans un module commun (ex: `connexion.php` ou `forum.php`), **tous les clients hébergés par Cibeco sont vulnérables** à la même attaque.
+*   **Absence de cloisonnement :** Si l'architecture ne prévoit pas une isolation stricte (VLAN, conteneurs, bases de données séparées), un attaquant ayant compromis Ecotri pourrait pivoter vers d'autres clients (Mouvement latéral).
+
+---
+
+<a name="d8q3"></a>
+### 2.3. Impacts humains, réputationnels et financiers (Q3)
+
+L'attaque engendre des conséquences dépassant le cadre purement technique.
+
+#### 👥 Impacts Humains
+*   **Clients (ex: Jean Dupont, Audrey Rabanov) :** Frustration, perte de confiance, sentiment d'insécurité quant à leurs données personnelles.
+*   **Personnel (M. Legendre) :** Stress intense, risque psychosociaux (burnout), surcharge de travail pour la gestion de crise.
+
+#### 💶 Impacts Financiers
+1.  **Perte de Chiffre d'Affaires :** Résiliation de contrats (churn), comme menacé par le client Hubert Garand ("C'est fini Ecotri").
+2.  **Coûts de remédiation :** Intervention d'experts cyber, reconstruction du site, audit de code.
+3.  **Sanctions juridiques :** Risque d'amende administrative par la CNIL pouvant atteindre **4% du chiffre d'affaires mondial** ou 20 millions d'euros en cas de défaut de sécurité avéré ([Art. 83 RGPD](https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre8#Article83)).
+
+---
+
+<a name="d8q4"></a>
+### 2.4. Responsabilité pénale & Identification de l'attaquant (Q4)
+
+L'attaque constitue une série d'infractions pénales caractérisées.
+
+#### ⚖️ Qualification juridique des faits
+
+| Acte malveillant | Qualification pénale | Article Code Pénal | Peine encourue |
+| :--- | :--- | :--- | :--- |
+| Intrusion sur le serveur | Accès frauduleux dans un STAD | **[Art. 323-1](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006418316)** | 3 ans, 100 000 € |
+| Modification du site | Introduction ou modification frauduleuse de données | **[Art. 323-3](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006418319)** | 5 ans, 150 000 € |
+| Vol de la base clients | Extraction de données | **[Art. 323-3](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006418319)** | 5 ans, 150 000 € |
+
+#### 🔍 Identification de l'attaquant
+*   **Élément technique :** L'adresse IP `82.89.34.7` a été relevée dans les logs du serveur web au moment de l'attaque.
+*   **Procédure légale :**
+    1.  Dépôt de plainte par Ecotri auprès des services de police ou gendarmerie (C3N/OCLCTIC).
+    2.  Le procureur ou le juge d'instruction délivre une réquisition judiciaire.
+    3.  Le Fournisseur d'Accès Internet (FAI) détenteur de l'IP est contraint de fournir l'identité de l'abonné associé à cette IP à l'heure de l'attaque (**[Loi LCEN Art. 6](https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000042038969/)**).
+
+   ---
+
