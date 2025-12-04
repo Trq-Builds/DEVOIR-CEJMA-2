@@ -272,3 +272,75 @@ La mise en place d'un mot de passe robuste pour l'administrateur, bien que néce
 
 ---
 
+<a name="dossier10"></a>
+## 📘 Dossier 10 — Procédures incidents FRAP (Cibeco)
+
+**Source :** `Cours10-CEJMA-ObligationsLégales.pdf`
+**Contexte :** Audit des Fiches de Réponse à Incident (FRAP) de Cibeco.
+**Objectif :** Identifier les non-conformités juridiques et opérationnelles des procédures de secours.
+
+<a name="d10q1"></a>
+### 4.1. FRAP n°1 : Confidentialité des accès serveurs (Q1)
+
+La procédure actuelle de gestion des accès de secours (génération de clés SSH) présente des failles critiques de sécurité.
+
+#### 🛑 Analyse des non-conformités
+
+| Étape Procédure | Faille identifiée | Risque Juridique / Normatif |
+| :--- | :--- | :--- |
+| **Génération** | Clés générées manuellement par une stagiaire (Sarah) sans supervision. | Violation du principe de compétence et de responsabilité (**ISO 27001 A.7**). |
+| **Stockage** | Clé privée stockée sur une clé USB non chiffrée, laissée sur un bureau ("Post-it"). | Négligence caractérisée (**[Code Pénal Art. 226-17](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006417978)** : manquement à l'obligation de sécurité). |
+| **Traçabilité** | Aucune journalisation de la création ou de l'usage de la clé. | Impossibilité d'imputer une action malveillante (Non-répudiation). |
+| **Cycle de vie** | Pas de date d'expiration ni de procédure de révocation. | Risque d'accès persistant non autorisé. |
+
+**Sanction potentielle :** Jusqu'à 5 ans d'emprisonnement et 300 000 € d'amende pour défaut de sécurisation des données personnelles.
+
+---
+
+<a name="d10q2"></a>
+### 4.2. FRAP n°2 : Intégrité du transfert des journaux (Q2)
+
+Le transfert des journaux systèmes (logs) vers le serveur d'archivage ne garantit pas leur valeur probante.
+
+#### ⚠️ Problèmes d'intégrité
+1.  **Absence de scellement :** Les logs sont transférés sans calcul d'empreinte numérique (Hash SHA-256). En cas de modification durant le transfert (Attaque *Man-in-the-Middle*), l'altération est indétectable.
+2.  **Canal non sécurisé :** Le protocole de transfert n'est pas spécifié comme chiffré (SFTP/TLS), exposant les données à une interception.
+
+#### Conséquence juridique
+Selon l'**[Article 1366 du Code Civil](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032042341)**, l'écrit électronique n'a la même force probante que l'écrit papier qu'à la condition que « puisse être dûment identifiée la personne dont il émane et qu'il soit établi et conservé dans des conditions de nature à en garantir l'intégrité ».
+**Conclusion :** Les logs collectés via cette FRAP seraient rejetés comme preuve par un tribunal.
+
+---
+
+<a name="d10q3"></a>
+### 4.3. FRAP n°3 : Disponibilité & Respect du SLA (Q3)
+
+La procédure de restauration des services clients est incompatible avec les engagements contractuels de Cibeco.
+
+#### 📉 Analyse de l'écart RTO/RPO
+*   **Engagement (SLA) :** Disponibilité de 99,9% (soit < 9h d'arrêt par an).
+*   **Réalité Procédure :** La sauvegarde est trimestrielle (tous les 3 mois).
+*   **Calcul du risque :**
+    *   **RPO (Perte de données maximale) :** 90 jours.
+    *   **Impact :** Perte massive de données clients.
+
+#### Violation Contractuelle & Légale
+*   **Droit des contrats :** Manquement à l'obligation de résultat sur la sauvegarde. Cibeco s'expose à des dommages et intérêts pour perte d'exploitation de ses clients.
+*   **RGPD Art. 32 :** L'incapacité à restaurer la disponibilité des données "dans des délais appropriés" constitue une infraction administrative passible d'amende.
+
+---
+
+<a name="d10q4"></a>
+### 4.4. Exigences probatoires des autorités judiciaires (Q4)
+
+Pour que les preuves numériques collectées (logs, images disques) soient acceptées par les services d'enquête (OCLCTIC, C3N) ou les tribunaux, les procédures FRAP doivent garantir :
+
+1.  **L'Intégrité :** Usage de fonctions de hachage (SHA-256) avant et après toute copie pour prouver que la donnée n'a pas été altérée.
+2.  **La Traçabilité (Chain of Custody) :** Chaque action sur la preuve doit être documentée (qui, quand, quoi, comment) dans un procès-verbal ou un journal sécurisé.
+3.  **La Préservation :** Les supports originaux doivent être mis sous scellés (Write-Blocker) et une copie de travail doit être utilisée pour l'analyse.
+
+**Référence :** Norme **ISO/IEC 27037** (Lignes directrices pour l'identification, la collecte, l'acquisition et la préservation de preuves numériques).
+
+---
+
+
