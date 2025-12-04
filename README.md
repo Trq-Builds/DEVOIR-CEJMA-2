@@ -10,11 +10,11 @@ Ce document regroupe l'intégralité des exercices demandés, traités sous form
 
 L'ensemble des travaux repose sur l'analyse des documents suivants fournis en annexe :
 
-*   `Cours 7・CEJMA-ObligationProtectionDonnées.pdf` (Audit Cibeco)
-*   `Cours 8・CEJMA-DisponibilitéIntégritéConfidentialité.pdf` (Incident Ecotri)
-*   `Cours 9・CEJMA-ArchivageProtectionsDonnées.pdf` (Sécurisation physique)
-*   `Cours 10・CEJMA-ObligationsLégales.pdf` (Procédures FRAP)
-*   `Cours 11・CEJMA-PreuvesNumériques.pdf` (Forensic)
+*   `Cours 7・CEJMA-ObligationProtectionDonnées.pdf`.
+*   `Cours 8・CEJMA-DisponibilitéIntégritéConfidentialité.pdf`.
+*   `Cours 9・CEJMA-ArchivageProtectionsDonnées.pdf`.
+*   `Cours 10・CEJMA-ObligationsLégales.pdf`.
+*   `Cours 11・CEJMA-PreuvesNumériques.pdf`.
 
 C'est entendu. Voici la **Table des matières complète et détaillée** pour l'ensemble du projet, structurée comme demandé pour servir de navigation globale.
 
