@@ -84,13 +84,13 @@ L'analyse de la procédure d'archivage actuelle met en évidence une absence tot
 
 Le système d'archivage actuel présente un **Point Unique de Défaillance (SPOF)**. Aucune mesure de redondance n'est en place.
 
-#### ⚠️・Facteurs de risques d'indisponibilité
+#### `⚠️`・Facteurs de risques d'indisponibilité
 
 1.  **Défaillance matérielle :** Panne du disque dur unique ou corruption de la clé USB de transfert.
 2.  **Dépendance humaine :** Le processus repose intégralement sur une personne (M. Darmon). Une absence entraîne un arrêt du service.
 3.  **Sinistre physique :** La salle serveur unique n'offre aucune protection contre les risques environnementaux (incendie, dégât des eaux).
 
-#### ⚖️・Références juridiques
+#### `⚖️`・Références juridiques
 
 *   **[Loi LCEN (2004-575)](https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000801164/)** : Obligation pour les hébergeurs de conserver les données de connexion (logs) pendant 1 an. Une indisponibilité des archives constitue une infraction pénale.
 *   **[ISO 22301](https://www.iso.org/standard/75106.html)** : Norme relative à la continuité d'activité, non respectée ici (absence de PCA/PRA).
@@ -130,7 +130,7 @@ Voici le **Dossier 8**, rédigé selon les standards de documentation définis.
 ***
 
 <a name="dossier8"></a>
-## 📘 Dossier 8 — Rapport d'incident cyber (Ecotri)
+## `📘` Dossier 8 — Rapport d'incident cyber (Ecotri)
 
 **Source :** `Cours8-CEJMA-DisponibilitéIntégritéConfidentialité.pdf`
 **Contexte :** Analyse post-mortem de l'attaque subie par le site web d'Ecotri le 11 novembre 2019.
@@ -141,7 +141,7 @@ Voici le **Dossier 8**, rédigé selon les standards de documentation définis.
 
 L'analyse forensique de l'incident met en évidence une compromission totale des trois piliers de la sécurité de l'information (DIC).
 
-#### 📊 Tableau de synthèse des impacts
+#### `📊` Tableau de synthèse des impacts
 
 | Critère | État | Description de l'incident | Impact métier |
 | :--- | :--- | :--- | :--- |
@@ -149,7 +149,7 @@ L'analyse forensique de l'incident met en évidence une compromission totale des
 | **Intégrité** | 🔴 **Compromise** | Modification de la page d'accueil (`new_msg`) et remplacement d'images (`valider.ok.jpeg`). Injection de code malveillant en base de données. | Perte de confiance, diffusion de fausses informations, corruption des données. |
 | **Confidentialité** | 🟠 **Menacée** | L'injection SQL a potentiellement permis l'exfiltration de la table `membres` (noms, adresses, téléphones). | Violation de données personnelles (DCP) nécessitant une notification CNIL. |
 
-#### 🧠 Analyse technique
+#### `🧠` Analyse technique
 La vulnérabilité exploitée est une **Injection SQL** (CWE-89). Le code source PHP (lignes 9-10 du document fourni) ne filtre pas les entrées utilisateurs et n'utilise pas de requêtes préparées (`INSERT INTO ... VALUES ...`).
 
 ---
@@ -171,7 +171,7 @@ Le risque ne se limite pas au seul client Ecotri. L'incident révèle une faille
 
 L'attaque engendre des conséquences dépassant le cadre purement technique.
 
-#### 👥 Impacts Humains
+#### `👥` Impacts Humains
 *   **Clients (ex: Jean Dupont, Audrey Rabanov) :** Frustration, perte de confiance, sentiment d'insécurité quant à leurs données personnelles.
 *   **Personnel (M. Legendre) :** Stress intense, risque psychosociaux (burnout), surcharge de travail pour la gestion de crise.
 
@@ -187,7 +187,7 @@ L'attaque engendre des conséquences dépassant le cadre purement technique.
 
 L'attaque constitue une série d'infractions pénales caractérisées.
 
-#### ⚖️ Qualification juridique des faits
+#### `⚖️` Qualification juridique des faits
 
 | Acte malveillant | Qualification pénale | Article Code Pénal | Peine encourue |
 | :--- | :--- | :--- | :--- |
