@@ -63,7 +63,7 @@ L'ensemble des travaux repose sur l'analyse des documents suivants fournis en an
 
 L'analyse de la procédure d'archivage actuelle met en évidence une absence totale de garantie de confidentialité. Les données sont exposées à plusieurs niveaux de l'architecture.
 
-#### `🧠`・Diagnostic technique
+#### `🧠`・Diagnostic technique :
 
 | Vecteur de risque | Description de la faille | Conséquence technique |
 | :--- | :--- | :--- |
