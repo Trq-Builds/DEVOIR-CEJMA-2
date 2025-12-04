@@ -344,8 +344,8 @@ Pour que les preuves numériques collectées (logs, images disques) soient accep
 <a name="dossier11"></a>
 ## `📘`・Dossier 11 ・ Collecte & Conservation des preuves (Forensic)
 
-**Source :** `Cours11-CEJMA-PreuvesNumériques.pdf`
-**Contexte :** Évaluation des capacités de Cibeco à collecter et conserver des preuves numériques recevables en justice.
+* **Source :** `Cours11-CEJMA-PreuvesNumériques.pdf`
+* **Contexte :** Évaluation des capacités de Cibeco à collecter et conserver des preuves numériques recevables en justice.
 
 <a name="d11q1"></a>
 ### 5.1. Conformité des moyens techniques de collecte (Q1)
