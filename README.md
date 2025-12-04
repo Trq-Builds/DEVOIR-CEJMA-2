@@ -56,7 +56,7 @@ L'ensemble des travaux repose sur l'analyse des documents suivants fournis en an
 
 * **Source :** `Cours7-CEJMA-ObligationProtectionDonnées.pdf`
 * **Contexte :** Audit du système d'archivage de l'entreprise Cibeco.
-* **Statut global :** 🔴 **Non-conforme** (Risque Critique).
+* **Statut global :** `🔴` **Non-conforme** (Risque Critique).
 
 <a name="d7q1"></a>
 ### 1.1. Analyse de la confidentialité (Q1)
