@@ -352,12 +352,12 @@ Pour que les preuves numériques collectées (logs, images disques) soient accep
 
 L'analyse de l'infrastructure de journalisation (Syslog) révèle des points forts mais aussi des lacunes critiques pour la conformité forensique.
 
-#### `✅`・Points de conformité (Bonnes pratiques)
+#### `✅`・Points de conformité (Bonnes pratiques) : 
 *   **Centralisation :** Utilisation d'un serveur Syslog dédié (Kiwi) évitant le stockage local volatil.
 *   **Redondance :** Existence de deux serveurs de logs.
 *   **Synchronisation :** Utilisation du protocole NTP (Network Time Protocol) garantissant un horodatage cohérent, essentiel pour la corrélation d'événements.
 
-#### `❌`・Non-conformités critiques
+#### `❌`・Non-conformités critiques : 
 *   **Absence de Chiffrement :** Les logs transitent et sont stockés en clair.
     *   *Violation :* **[RGPD Art. 32](https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4#Article32)** (Sécurité du traitement).
 *   **Absence de Signature :** Aucune garantie d'intégrité (pas de Hachage/Signature électronique).
