@@ -10,10 +10,12 @@ Tous les exercices des 5 documents ont été traités. Les corrections et compl�
 `Cours11-CEJMA-PreuvesNumériques.pdf`.
 
 # `📌`・Table des matières (Cliquez pour être redirigé.)
-[Cours 7・Audit de conformité & Analyse des risques (Cibeco)](#cours-7)
-[Cours 8・Rapport d'incident cyber (Ecotri)](#cours-8)
-[Cours 9・Archivage & Protection des données (Cibeco)](#cours-9)
-[Cours 10・Procédures incidents FRAP (Cibeco)](#cours-10)
-[Cours 11・Collecte & Conservation des preuves numériques](#cours-11)
-[Annexes utiles ・ modèles, matrices et schémas textuels](#annexes)
-[Références web citées (législation / autorités)](#references)
+1. [Cours 7・Audit de conformité & Analyse des risques (Cibeco)](#cours-7)
+2. [Cours 8・Rapport d'incident cyber (Ecotri)](#cours-8)
+3. [Cours 9・Archivage & Protection des données (Cibeco)](#cours-9)
+4. [Cours 10・Procédures incidents FRAP (Cibeco)](#cours-10)
+5. [Cours 11・Collecte & Conservation des preuves numériques](#cours-11)
+6. [Annexes utiles ・ modèles, matrices et schémas textuels](#annexes)
+7. [Références web citées (législation / autorités)](#references)
+
+---
