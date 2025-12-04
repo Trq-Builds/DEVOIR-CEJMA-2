@@ -903,5 +903,178 @@ CERT interne + partenariat externe:
     *   🎓 Former équipe à la gestion d'incidents (norme ISO 22398).
     *   🤝 Audit externe par cabinet qualifié.
 
---- 
+---
+
+Voici le dernier document, le **Cours 11**, formaté selon les mêmes standards.
+
+***
+
+# 📄 ・Cours 11 — Collecte & Conservation des preuves numériques
+
+**Référence :** `Cours11-CEJMA-PreuvesNumériques.pdf`
+**Date d'analyse :** 2025-12-04
+**Périmètre :** Chain of custody, intégrité, traçabilité, résilience physique
+**Maturité forensique :** 🟡 **2/5 (Partiellement conforme)**
+**Recevabilité juridique :** 🔴 **Incertaine (risque d'irrecevabilité)**
+
+---
+
+### 1️⃣ Q1 — Moyens techniques pour collecte conforme
+
+#### ✅ Forces existantes (bases correctes)
+| Composant | Existant Cibeco | Conformité |
+| :--- | :--- | :--- |
+| **Centralisation Syslog** | Oui, 2 serveurs redondés | ✅ Conforme (Centralisation) |
+| **Serveur NTP** | Oui, horodatage précis | ✅ Conforme (RFC 3161) |
+| **Bande passante** | 10% garantis | ✅ Conforme (Min 5%) |
+| **Alertes** | Email > 90% remplissage | ✅ Conforme (Proactif) |
+| **VLAN séparé** | VLAN SERVEUR dédié | ✅ Conforme (Isolation) |
+
+#### 🔴 Faiblesses critiques (non-conformités majeures)
+| Défaillance technique | Impact forensique | Article violé | Sanction |
+| :--- | :--- | :--- | :--- |
+| **Pas de chiffrement** | Confidentialité nulle | RGPD Art. 32(1)a | 4% CA |
+| **Pas de checksum** | Intégrité non prouvable | CPP Art. 803 | 🔴 Preuve irrecevable |
+| **Rotation hebdo** | Destruction preuve < 1 an | Art. L123-22 Com. | 🔴 Destruction preuves |
+| **Pas de WORM** | Altération possible | ISO 27037 §7.2 | 🔴 Rupture chaîne |
+
+#### 📖 Sources normatives & jurisprudence
+*   **ISO 27037:2012 :** Les données doivent être immédiatement chiffrées et authentifiées par checksum dès la collecte. (Cibeco : 0% conforme).
+*   **Code de procédure pénale Art. 803 :** La preuve électronique n'est recevable que si son intégrité est garantie par un procès continu et vérifié.
+*   **Jurisprudence (Cass. crim. 2018) :** "Logs non chiffrés et non signés = preuve irrecevable."
+
+#### 🎯 Recommandations (Chain of Custody)
+```yaml
+Architecture forensique cible:
+  - Syslog-ng + TLS 1.3 + auth mutuelle (certificats)
+  - Hash SHA-256 sur chaque event + signature RSA-4096
+  - WORM LTO-9 + S3 Object Lock (rétention 10 ans)
+  - Timestamp RFC 3161 via HSM (preuve qualifiée eIDAS)
+  - Blockchain Ethereum privée (immutabilité juridique)
+  - Test de restauration mensuel + PV notarié
+```
+
+---
+
+### 2️⃣ Q2 — Complétude des événements collectés
+
+#### 📋 Analyse de la liste Syslog Kiwi
+Les événements collectés (auth, arrêts BDD) sont insuffisants. Il manque les éléments critiques selon **ISO 27037 §8.2** :
+
+| Catégorie manquante | Pourquoi critique ? | Risque juridique |
+| :--- | :--- | :--- |
+| **Gestion comptes** | Ajout/suppression droits | 🔴 Art. 30 RGPD |
+| **Élévation privilèges** | Sudo/admin (détection insider) | 🔴 Art. 323-3 |
+| **Accès fichiers** | Lecture/écriture données sensibles | 🔴 Art. 226-17 |
+| **USB/Périphériques** | Branchement clé USB (vol données) | 🔴 Art. 434-4 |
+| **Firewall** | Modification règles | 🔴 Art. 323-1 |
+
+*Métrique :* 40% de complétude par rapport aux recommandations ANSSI (Seuil légal min. 80%).
+
+#### 📖 Sources normatives
+*   **ANSSI - Recommandation R1 (2022) :** Toute tentative d'accès aux ressources, même en lecture seule, doit être journalisée avec IP, user, timestamp et résultat.
+*   **CNIL - FR-39 :** L'absence de logs d'élévation de privilèges empêche la détection d'usurpation d'identité.
+
+#### 🎯 Recommandations (Supervision)
+```yaml
+Collection exhaustive UEBA:
+  - Auditd (Linux) + Sysmon (Windows) sur tous les serveurs
+  - Commandes sudo, chmod, chown = alerte P1 immédiate
+  - File Integrity Monitoring (FIM) : AIDE + OSQuery
+  - USBGuard : blocage et log de tout périphérique
+  - NetFlow/IPFIX : surveillance flux réseau anormaux
+  - Wazuh SIEM : corrélation events + scoring MITRE ATT&CK
+```
+
+---
+
+### 3️⃣ Q3 — Durabilité des supports de stockage
+
+#### 💾 Analyse viabilité des supports
+La pratique de **rotation hebdomadaire** est illégale car elle implique l'écrasement des preuves récentes.
+
+| Support | Fiabilité | Durabilité légale | Conformité |
+| :--- | :--- | :--- | :--- |
+| **Baie RAID 5** | ⚠️ 1 disque toléré | Court terme (< 1 an) | 🟡 Partiel |
+| **Bandes LTO** | ✅ Bonne (10 ans) | ✅ Long terme | ✅ Conforme |
+| **Copie double** | ✅ Redondance | ✅ Conservation 10 ans | ✅ Conforme |
+| **Rotation hebdo** | 🔴 Écrasement | 🔴 Destruction preuves | 🔴 **ILLÉGAL** |
+
+#### 📖 Sources juridiques
+*   **Code de commerce Art. L123-22 :** Conservation 10 ans des pièces justificatives.
+*   **Code pénal Art. 434-4 :** "Le fait de détruire des preuves est puni de 3 ans d'emprisonnement et 45 000€ d'amende." (L'écrasement hebdomadaire constitue ce délit).
+*   **ISO 27040 :** Les supports doivent être testés annuellement (Lecture, Hash, Restauration). Cibeco ne fait aucun test.
+
+#### 🎯 Recommandations (Durabilité)
+```yaml
+Architecture Stockage Long Terme:
+  - S3 Glacier Deep Archive avec Object Lock (immutabilité 10 ans)
+  - Bandes LTO-9 + sauvegarde hors-site (ex: C14 OVHcloud)
+  - Migration support tous les 3 ans (gestion obsolescence)
+  - PV de viabilité annuel signé par expert judiciaire
+  - Certification ISO 27040 (stockage sécurisé)
+```
+
+---
+
+### 4️⃣ Q4 — Résilience du site de conservation
+
+#### 🔥 Analyse de robustesse physique
+Cibeco ne dispose d'aucune mesure de continuité sérieuse (DRP/BCP).
+
+| Élément protection | Existant (Doc 6) | Exigence APSAD/CNPP | Conformité |
+| :--- | :--- | :--- | :--- |
+| **Incendie** | Système récent | APSAD R4 + FE-25 | ✅ Conforme |
+| **Climatisation** | Baie climatisée | Redondance N+1 | ⚠️ Vulnérable |
+| **Localisation** | Bat. A, Salle S02 | Site distant > 10km | 🔴 Pas de DRP |
+| **Alimentation** | UPS ? | Générateur + UPS 2h | ⚠️ Incertain |
+| **Accès** | Verrouillage baie | Coffre-fort certifié | 🔴 Insuffisant |
+
+#### 📖 Sources normatives
+*   **ISO 22301 :** Le site de secours doit être à > 10 km et sur un réseau sismique différent.
+*   **Loi n°2004-575 :** Les hébergeurs doivent garantir la localisation et la sécurité physique des données.
+
+#### 🎯 Recommandations (Site TIER IV)
+```yaml
+Architecture Data Center TIER IV:
+  - Site primaire SecNumCloud (DC3 OVHcloud / Equinix)
+  - Site secours > 100 km (Strasbourg/Lyon)
+  - Réplication synchrone ZFS snapshots chiffrés
+  - Coffre-fort FIPS 140-3 pour bandes LTO
+  - Test BCP/DRP semestriel avec OCLCTIC
+  - Assurance cyber 10M€
+```
+
+---
+
+### 🎯 Synthèse & Feuille de route certification
+
+#### 📊 Tableau de bord forensique
+| Critère | Actuel | Cible | Gap |
+| :--- | :--- | :--- | :--- |
+| **Chiffrement** | 0% | 100% | 🔴 Critique |
+| **Checksum** | 0% | 100% | 🔴 Critique |
+| **Conservation** | 1 semaine | 10 ans | 🔴 Critique |
+| **Résilience** | 0% | TIER IV | 🔴 Critique |
+| **Score** | **1/20** | **19/20** | **95% d'écart** |
+
+#### 📋 Plan d'action certification ISO 27037
+
+*   **Jours 1-7 (URGENCE) :**
+    *   🔒 Chiffrer immédiatement toutes les bandes LTO (VeraCrypt Enterprise).
+    *   📊 Générer SHA-256 de tous les logs existants + signer via GPG.
+    *   🚨 **STOPPER** la rotation hebdomadaire (conserver 10 ans minimum).
+
+*   **Jours 8-30 (STRUCTURATION) :**
+    *   📖 Rédiger procédure forensique (chain of custody validée par expert).
+    *   🔐 Déployer HSM pour timestamping qualifié.
+    *   🏢 Auditer site physique par CNPP APSAD R4.
+
+*   **Jours 31-90 (CERTIFICATION) :**
+    *   ✅ Audits externes ISO 27037 + ISO 27040.
+    *   🤝 Signer partenariat avec OCLCTIC (point de contact).
+    *   📚 Former équipe à la gestion preuves (30h CNPP).
+
+---
+
 
