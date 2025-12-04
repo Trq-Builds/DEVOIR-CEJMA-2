@@ -137,7 +137,7 @@ Pour mettre le système en conformité, les actions suivantes sont recommandées
 
 L'analyse forensique de l'incident met en évidence une compromission totale des trois piliers de la sécurité de l'information (DIC).
 
-#### `📊`・Tableau de synthèse des impacts
+#### `📊`・Tableau de synthèse des impacts : 
 
 | Critère | État | Description de l'incident | Impact métier |
 | :--- | :--- | :--- | :--- |
