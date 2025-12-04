@@ -2,7 +2,7 @@
 
 **Thématiques :** Protection des données (DCP) • Identité numérique • Preuve électronique • Sécurité des équipements • Obligations légales.
 
-Ce document regroupe l'intégralité des exercices demandés, traités sous forme de documentation technique structurée. Les analyses s'appuient sur les cadres juridiques (**RGPD, Code Pénal, LCEN**) et normatifs (**ISO 27001, ISO 22301**) en vigueur !
+Intégralité des exercices demandés, traités sous forme de documentation technique structurée. Les analyses s'appuient sur les cadres juridiques (**RGPD, Code Pénal, LCEN**) et normatifs (**ISO 27001, ISO 22301**) en vigueur !
 
 ---
 
