@@ -167,11 +167,11 @@ Le risque ne se limite pas au seul client Ecotri. L'incident révèle une faille
 
 L'attaque engendre des conséquences dépassant le cadre purement technique.
 
-#### `👥`・Impacts Humains
+#### `👥`・Impacts Humains : 
 *   **Clients (ex: Jean Dupont, Audrey Rabanov) :** Frustration, perte de confiance, sentiment d'insécurité quant à leurs données personnelles.
 *   **Personnel (M. Legendre) :** Stress intense, risque psychosociaux (burnout), surcharge de travail pour la gestion de crise.
 
-#### `💶`・Impacts Financiers
+#### `💶`・Impacts Financiers : 
 1.  **Perte de Chiffre d'Affaires :** Résiliation de contrats (churn), comme menacé par le client Hubert Garand ("C'est fini Ecotri").
 2.  **Coûts de remédiation :** Intervention d'experts cyber, reconstruction du site, audit de code.
 3.  **Sanctions juridiques :** Risque d'amende administrative par la CNIL pouvant atteindre **4% du chiffre d'affaires mondial** ou 20 millions d'euros en cas de défaut de sécurité avéré ([Art. 83 RGPD](https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre8#Article83)).
@@ -191,7 +191,7 @@ L'attaque constitue une série d'infractions pénales caractérisées.
 | Modification du site | Introduction ou modification frauduleuse de données | **[Art. 323-3](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006418319)** | 5 ans, 150 000 € |
 | Vol de la base clients | Extraction de données | **[Art. 323-3](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006418319)** | 5 ans, 150 000 € |
 
-#### `🔍`・Identification de l'attaquant
+#### `🔍`・Identification de l'attaquant : 
 *   **Élément technique :** L'adresse IP `82.89.34.7` a été relevée dans les logs du serveur web au moment de l'attaque.
 *   **Procédure légale :**
     1.  Dépôt de plainte par Ecotri auprès des services de police ou gendarmerie (C3N/OCLCTIC).
@@ -300,11 +300,11 @@ La procédure actuelle de gestion des accès de secours (génération de clés S
 
 Le transfert des journaux systèmes (logs) vers le serveur d'archivage ne garantit pas leur valeur probante.
 
-#### `⚠️`・Problèmes d'intégrité
+#### `⚠️`・Problèmes d'intégrité : 
 1.  **Absence de scellement :** Les logs sont transférés sans calcul d'empreinte numérique (Hash SHA-256). En cas de modification durant le transfert (Attaque *Man-in-the-Middle*), l'altération est indétectable.
 2.  **Canal non sécurisé :** Le protocole de transfert n'est pas spécifié comme chiffré (SFTP/TLS), exposant les données à une interception.
 
-#### Conséquence juridique
+#### Conséquence juridique : 
 Selon l'**[Article 1366 du Code Civil](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032042341)**, l'écrit électronique n'a la même force probante que l'écrit papier qu'à la condition que « puisse être dûment identifiée la personne dont il émane et qu'il soit établi et conservé dans des conditions de nature à en garantir l'intégrité ».
 **Conclusion :** Les logs collectés via cette FRAP seraient rejetés comme preuve par un tribunal.
 
@@ -315,14 +315,14 @@ Selon l'**[Article 1366 du Code Civil](https://www.legifrance.gouv.fr/codes/arti
 
 La procédure de restauration des services clients est incompatible avec les engagements contractuels de Cibeco.
 
-#### `📉`・Analyse de l'écart RTO/RPO
+#### `📉`・Analyse de l'écart RTO/RPO : 
 *   **Engagement (SLA) :** Disponibilité de 99,9% (soit < 9h d'arrêt par an).
 *   **Réalité Procédure :** La sauvegarde est trimestrielle (tous les 3 mois).
 *   **Calcul du risque :**
     *   **RPO (Perte de données maximale) :** 90 jours.
     *   **Impact :** Perte massive de données clients.
 
-#### Violation Contractuelle & Légale
+#### Violation Contractuelle & Légale : 
 *   **Droit des contrats :** Manquement à l'obligation de résultat sur la sauvegarde. Cibeco s'expose à des dommages et intérêts pour perte d'exploitation de ses clients.
 *   **RGPD Art. 32 :** L'incapacité à restaurer la disponibilité des données "dans des délais appropriés" constitue une infraction administrative passible d'amende.
 
@@ -370,7 +370,7 @@ L'analyse de l'infrastructure de journalisation (Syslog) révèle des points for
 
 La liste des événements collectés par le serveur Kiwi (Doc 3) est insuffisante pour mener une investigation complète.
 
-#### `📉`・Événements manquants (Gap Analysis)
+#### `📉`・Événements manquants (Gap Analysis) : 
 
 Selon les recommandations de l'**ANSSI** et la norme **ISO 27037**, une journalisation efficace doit inclure :
 
@@ -386,7 +386,7 @@ Selon les recommandations de l'**ANSSI** et la norme **ISO 27037**, une journali
 
 La politique de rotation des sauvegardes est juridiquement dangereuse.
 
-#### `🛑`・Analyse de la rotation hebdomadaire
+#### `🛑`・Analyse de la rotation hebdomadaire : 
 Cibeco pratique une rotation des supports (bandes ou disques) sur une période d'une semaine. Cela signifie que les preuves sont écrasées tous les 7 jours.
 
 *   **Problème Juridique :** L'**[Article L123-22 du Code de Commerce](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006221311)** impose une conservation des documents comptables et pièces justificatives (dont les logs de transactions) pendant **10 ans**.
