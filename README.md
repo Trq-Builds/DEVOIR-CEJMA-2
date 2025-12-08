@@ -155,7 +155,7 @@ La vulnérabilité exploitée est une **Injection SQL** (CWE-89). Le code source
 
 Le risque ne se limite pas au seul client Ecotri. L'incident révèle une faille structurelle dans les processus de développement de l'hébergeur Cibeco.
 
-#### Diagnostic de contagion
+#### `🩺`・Diagnostic de contagion
 *   **Réutilisation de code :** Cibeco semble utiliser le même moteur de site ou les mêmes procédures d'authentification pour l'ensemble de ses clients.
 *   **Vecteur de propagation :** Si la faille réside dans un module commun (ex: `connexion.php` ou `forum.php`), **tous les clients hébergés par Cibeco sont vulnérables** à la même attaque.
 *   **Absence de cloisonnement :** Si l'architecture ne prévoit pas une isolation stricte (VLAN, conteneurs, bases de données séparées), un attaquant ayant compromis Ecotri pourrait pivoter vers d'autres clients (Mouvement latéral).
@@ -228,11 +228,11 @@ L'audit des locaux révèle de graves manquements aux obligations légales de s�
 
 La procédure actuelle de gestion des accès est obsolète et juridiquement irrecevable.
 
-#### Diagnostic
+#### `🩺`・Diagnostic.
 *   **Méthode actuelle :** Formulaire papier (Doc 2) rempli manuellement.
 *   **Problème majeur :** Ce système ne garantit ni l'**intégrité** (le papier peut être détruit ou modifié), ni la **non-répudiation** (signature facile à falsifier), ni la **disponibilité** (recherche d'information lente et complexe).
 
-#### Exigence légale
+#### `⚖️`・Exigence légale.
 L'**[Article 32 du RGPD](https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4#Article32)** impose la capacité de rétablir la disponibilité et l'accès aux données. De plus, l'obligation de reddition de comptes (Accountability) nécessite une journalisation informatique inaltérable (logs) pour prouver qui a accédé à quelle donnée et à quel moment.
 
 ---
@@ -259,7 +259,7 @@ L'analyse de la configuration du serveur de base de données `miRDB` (Doc 3) met
 
 La mise en place d'un mot de passe robuste pour l'administrateur, bien que nécessaire, est **insuffisante** pour garantir la conformité globale.
 
-#### Justification structurée
+#### `⚖️`・Justification structurée
 
 1.  **Périmètre limité :** Le mot de passe ne protège que l'accès logique (Authentification). Il ne couvre pas :
     *   La **sécurité physique** (vol du serveur).
@@ -304,7 +304,7 @@ Le transfert des journaux systèmes (logs) vers le serveur d'archivage ne garant
 1.  **Absence de scellement :** Les logs sont transférés sans calcul d'empreinte numérique (Hash SHA-256). En cas de modification durant le transfert (Attaque *Man-in-the-Middle*), l'altération est indétectable.
 2.  **Canal non sécurisé :** Le protocole de transfert n'est pas spécifié comme chiffré (SFTP/TLS), exposant les données à une interception.
 
-#### Conséquence juridique : 
+#### `⚖️`・Conséquence juridique : 
 Selon l'**[Article 1366 du Code Civil](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032042341)**, l'écrit électronique n'a la même force probante que l'écrit papier qu'à la condition que « puisse être dûment identifiée la personne dont il émane et qu'il soit établi et conservé dans des conditions de nature à en garantir l'intégrité ».
 **Conclusion :** Les logs collectés via cette FRAP seraient rejetés comme preuve par un tribunal.
 
@@ -322,7 +322,7 @@ La procédure de restauration des services clients est incompatible avec les eng
     *   **RPO (Perte de données maximale) :** 90 jours.
     *   **Impact :** Perte massive de données clients.
 
-#### Violation Contractuelle & Légale : 
+#### `⚖️`・Violation Contractuelle & Légale : 
 *   **Droit des contrats :** Manquement à l'obligation de résultat sur la sauvegarde. Cibeco s'expose à des dommages et intérêts pour perte d'exploitation de ses clients.
 *   **RGPD Art. 32 :** L'incapacité à restaurer la disponibilité des données "dans des délais appropriés" constitue une infraction administrative passible d'amende.
 
