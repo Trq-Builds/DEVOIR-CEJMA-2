@@ -155,7 +155,7 @@ La vulnérabilité exploitée est une **Injection SQL** (CWE-89). Le code source
 
 Le risque ne se limite pas au seul client Ecotri. L'incident révèle une faille structurelle dans les processus de développement de l'hébergeur Cibeco.
 
-#### `🩺`・Diagnostic de contagion
+#### `🩺`・Diagnostic de contagion :
 *   **Réutilisation de code :** Cibeco semble utiliser le même moteur de site ou les mêmes procédures d'authentification pour l'ensemble de ses clients.
 *   **Vecteur de propagation :** Si la faille réside dans un module commun (ex: `connexion.php` ou `forum.php`), **tous les clients hébergés par Cibeco sont vulnérables** à la même attaque.
 *   **Absence de cloisonnement :** Si l'architecture ne prévoit pas une isolation stricte (VLAN, conteneurs, bases de données séparées), un attaquant ayant compromis Ecotri pourrait pivoter vers d'autres clients (Mouvement latéral).
