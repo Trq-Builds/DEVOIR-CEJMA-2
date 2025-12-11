@@ -228,11 +228,11 @@ L'audit des locaux révèle de graves manquements aux obligations légales de s�
 
 La procédure actuelle de gestion des accès est obsolète et juridiquement irrecevable.
 
-#### `🩺`・Diagnostic.
+#### `🩺`・Diagnostic :
 *   **Méthode actuelle :** Formulaire papier (Doc 2) rempli manuellement.
 *   **Problème majeur :** Ce système ne garantit ni l'**intégrité** (le papier peut être détruit ou modifié), ni la **non-répudiation** (signature facile à falsifier), ni la **disponibilité** (recherche d'information lente et complexe).
 
-#### `⚖️`・Exigence légale.
+#### `⚖️`・Exigence légale :
 L'**[Article 32 du RGPD](https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4#Article32)** impose la capacité de rétablir la disponibilité et l'accès aux données. De plus, l'obligation de reddition de comptes (Accountability) nécessite une journalisation informatique inaltérable (logs) pour prouver qui a accédé à quelle donnée et à quel moment.
 
 ---
@@ -259,7 +259,7 @@ L'analyse de la configuration du serveur de base de données `miRDB` (Doc 3) met
 
 La mise en place d'un mot de passe robuste pour l'administrateur, bien que nécessaire, est **insuffisante** pour garantir la conformité globale.
 
-#### `⚖️`・Justification structurée
+#### `⚖️`・Justification structurée :
 
 1.  **Périmètre limité :** Le mot de passe ne protège que l'accès logique (Authentification). Il ne couvre pas :
     *   La **sécurité physique** (vol du serveur).
@@ -401,7 +401,7 @@ Cibeco pratique une rotation des supports (bandes ou disques) sur une période d
 
 L'audit du site de conservation (Doc 6) montre une vulnérabilité physique inacceptable pour un hébergeur.
 
-#### `🏗️`・Audit de robustesse
+#### `🏗️`・Audit de robustesse :
 *   **Localisation :** Salle unique (S02), pas de site de repli distant. En cas de sinistre majeur (incendie, inondation), toutes les preuves sont perdues.
 *   **Normes non respectées :**
     *   **ISO 22301 (Continuité) :** Exige une redondance géographique (> 10 km) pour les données critiques.
