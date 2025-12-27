@@ -62,7 +62,7 @@ L'ensemble des travaux repose sur l'analyse des documents suivants fournis en an
 
 ---
     
-6.  [**Annexes** ・ Références juridiques & techniques](#annexes)
+6.  [**Annexes** ・ Références juridiques](#annexes)
 
 ***
 
@@ -425,7 +425,7 @@ L'audit du site de conservation (Doc 6) montre une vulnérabilité physique inac
 ---
 
 <a name="annexes"></a>
-## `📎`・ Annexes ・ Références juridiques & techniques.
+## `📎`・ Annexes ・ Références juridiques.
 
 Cette section regroupe les textes réglementaires et normatifs cités tout au long du dossier.
 
