@@ -5,6 +5,9 @@
 Ce dépôt regroupe l’intégralité des exercices issus des six documents fournis, entièrement traités et organisés sous forme de documentation technique structurée.
 Les analyses et corrections ont été enrichies par des compléments juridiques afin de renforcer la qualité et la conformité du rendu, avec des références au RGPD, à la CNIL, au Code pénal, ainsi qu’aux cadres législatifs pertinents tels que la LCEN.
 
+> [!NOTE]
+> **Note obtenue : 20/20 !**
+
 ---
 
 ## `🗃️`・Documents de référence : 
